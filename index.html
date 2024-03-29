@@ -4,18 +4,22 @@
 <head>
 	<title>~/startpage</title>
 	<link rel="stylesheet" type="text/css" href="static/styles/style.css">
+	<link rel="icon" href="static/images/ico.ico" type="image/x-icon" />
 </head>
 
 <body>
 	<nav>
 		<h1>Welcome back!</h1>
 		<h2 id="date"></h2>
+		<form action="http://www.google.com/search" target="_blank" method="get">
+			<input type="text" class="input" placeholder="Search with Google" name="q" />
+		</form>
 		<ul>
 			<li>~/general </li>
 			<li><a href="https://gmail.com/">Gmail</a></li>
 			<li><a href="https://youtube.com">YouTube</a></li>
 			<li><a href="https://calendar.google.com/calendar/u/0/r?pli=1">Calendar</a></li>
-			<li><a href="https://onedrive.live.com/">Drive</a></li>
+			<li><a href="https://onedrive.live.com/">One Drive</a></li>
 			<li><a href="https://monkeytype.com/">MonkeyType</a></li>
 		</ul>
 		<ul>
@@ -30,13 +34,11 @@
 			<li>~/school 拾</li>
 			<li><a href="https://notion.so">Notion</a></li>
 			<li><a href="https://www.office.com/?auth=1">Office</a></li>
-			<li><a href="https://ckziu-kursy.pl/my/">Moodle</a></li>
-			<li><a href="https://uonetplus.vulcan.net.pl/powiatstrzelecki">Vulcan</a></li>
 			<li><a href="https://www.w3schools.com">W3Schools</a></li>
 		</ul>
 		<ul>
 			<li>~/reddit </li>
-			<li><a href="https://reddit.com/">reddit.com</a></li>
+			<li><a href="https://reddit.com/">reddit</a></li>
 			<li><a href="https://reddit.com/r/unixporn/">r/unixporn</a></li>
 			<li><a href="https://reddit.com/r/archlinux/">r/archlinux</a></li>
 			<li><a href="https://www.reddit.com/r/learnprogramming/">r/learnprogramming</a></li>
@@ -44,7 +46,7 @@
 		</ul>
 	</nav>
 	<div class="image">
-		<img alt="fem" src="static/images/img.png">
+		<a href="https://druxorey.github.io/"><img alt="fem" src="static/images/img.png"></a>
 	</div>
 	<script type="text/javascript" src="scripts/get_date.js"></script>
 </body>
