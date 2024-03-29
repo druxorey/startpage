@@ -1,4 +1,4 @@
-# My Custom Startpage
+# Startpage
 
 This is my personalized startpage, designed to be my browser homepage. It includes quick links to my favorite websites, a search bar, and a minimalist layout.
 
