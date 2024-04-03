@@ -4,7 +4,7 @@ This is my personalized startpage, designed to be my browser homepage. It includ
 
 ## Screenshot
 
-![Screenshot](resources/startpage-2024-03-29.png)
+![Screenshot](resources/startpage-2024-04-03.png)
 
 ## Usage
 
