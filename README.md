@@ -2,9 +2,7 @@
 
 This is my personalized startpage, designed to be my browser homepage. It includes quick links to my favorite websites, a search bar, and a minimalist layout.
 
-## Screenshot
-
-![Screenshot](resources/startpage-2024-04-03.png)
+![Screenshot](resources/startpage-2024-06-14.webp)
 
 ## Usage
 
@@ -14,8 +12,9 @@ This is my personalized startpage, designed to be my browser homepage. It includ
 
 ## Customization
 
-You can personalize the startpage by editing the `index.html` file. Change the links, colors, and styles in the `style.css` to suit your needs.
+You can personalize the startpage by editing the `index.html` file. Change the colors, and styles in the `style.css` to suit your needs.
 
-## Credits
+# Credits
 
-This is inspired by [Fxzii Startpage](https://github.com/Fxzzi/startpage).
+- Inspired from [Fxzii Startpage](https://github.com/Fxzzi/startpage).
+
