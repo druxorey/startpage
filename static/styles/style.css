@@ -22,9 +22,9 @@
 }
 
 html {
-    align-items: center;
     display: flex;
     height: 100%;
+    align-items: center;
     justify-content: center;
 }
 
@@ -32,8 +32,8 @@ body {
     background: var(--primary-background-color);
     color: -var(--primary-foreground-color);
     display: flex;
-    margin-right: 2em;
     padding: 1em;
+    transition: background 1s ease-out;
 }
 
 img {
@@ -42,7 +42,7 @@ img {
     margin-left: 7.5em;
     margin-top: 3.5em;
     border-radius: var(--border-size);
-    box-shadow: var(--normal-shadow) 0px 54px 55px;
+    box-shadow: var(--normal-shadow) 0px 50px 60px;
     transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -55,13 +55,15 @@ img:hover {
 nav {
     background: var(--tertiary-background-color);
     border-radius: var(--border-size);
-    box-shadow: var(--normal-shadow) 0px 54px 55px;
+    box-shadow: var(--normal-shadow) 0px 50px 60px;
     display: grid;
     padding: 3em;
     grid-row-gap: 1em;
     grid-template-columns: 1fr 1fr;
-    min-width: 24em;
+    width: 30em;
     grid-auto-rows: max-content;
+    transition: background 1s ease-in, border-radius 1s ease-in, box-shadow 1s ease-in;
+
 }
 
 h1 {
@@ -92,6 +94,7 @@ form {
 
 ul {
     margin: 0;
+    margin-left: 3vw;
     padding: 0;
     white-space: nowrap;
     list-style-type: none;
@@ -100,8 +103,6 @@ ul {
 li {
     color: var(--secondary-foreground-color);
     line-height: 1.4em;
-    margin-left: 4.8em;
-    
 }
 
 li:first-child {
@@ -110,7 +111,6 @@ li:first-child {
     font-weight: 600;
     text-align: center;
     line-height: 2em;
-    margin-left: 2.5em;
 }
 
 a {
@@ -118,6 +118,8 @@ a {
     text-decoration: none;
     font-size: 1em;
     transition: color 0.3s ease;
+    margin-left: 1.7em;
+
     }
     
 a:hover {
@@ -166,7 +168,7 @@ input:focus {
     outline: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
     .image {
         display: flex;
         justify-content: center;
@@ -176,7 +178,7 @@ input:focus {
     img {
         margin-left: 5vw;
         margin-top: 0vw;
-        width: 25vw;
+        width: 20vw;
         height: auto;
     }
 
@@ -187,8 +189,27 @@ input:focus {
 
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     img {
         display: none;
     }
+}
+
+@media (max-width: 800px) {
+    img {
+        display: none;
+    }
+    
+nav {
+    background: none;
+    box-shadow: none;
+    transition: background 1s ease-out, border-radius 1s ease-out, box-shadow 1s ease-out;
+    width: 64vw;
+}
+
+body {
+    background: var(--tertiary-background-color);
+    transition: background 1s ease-out;
+}
+
 }
