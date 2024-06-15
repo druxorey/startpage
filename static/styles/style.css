@@ -10,8 +10,13 @@
 }
 
 @font-face {
-    font-family: "Font";
+    font-family: "default-font";
     src: url("../fonts/hack.ttf");
+}
+
+* {
+    font-family: 'default-font', sans-serif;
+    font-size: 18px;
 }
 
 html {
@@ -24,8 +29,6 @@ html {
 body {
     background: var(--primary-background-color);
     color: -var(--primary-foreground-color);
-    font-family: Font;
-    font-size: 18px;
     display: flex;
     margin-right: 2em;
     padding: 1em;
@@ -92,6 +95,7 @@ li {
     color: var(--secondary-foreground-color);
     line-height: 1.4em;
     margin-left: 4.8em;
+    
 }
 
 li:first-child {
@@ -106,6 +110,7 @@ li:first-child {
 a {
     color: var(--primary-foreground-color);
     text-decoration: none;
+    font-size: 1em;
     transition: color 0.3s ease;
 }
 
