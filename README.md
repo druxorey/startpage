@@ -2,7 +2,7 @@
 
 This is my personalized startpage, designed to be my browser homepage. It includes quick links to my favorite websites, a search bar, and a minimalist layout.
 
-![Screenshot](resources/startpage-2024-06-14.webp)
+![Screenshot](resources/startpage-2024-07-24.webp)
 
 ## Usage
 
