@@ -39,7 +39,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 5vw;
-    transition: 1s ease-in-out;
 }
 
 img {
@@ -202,4 +201,7 @@ input:focus {
         transition: 1s ease-out;
     }
 
+    input {
+        background: var(--color-background-3);
+    }
 }
