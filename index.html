@@ -8,12 +8,12 @@
 </head>
 
 <body>
-    <nav>
-        <h1>Welcome back!</h1>
-        <h2 id="date"></h2>
-        
-        <form action="https://duckduckgo.com/" method="get">
-            <input type="text" class="input" placeholder="Search with DuckDuckGo" name="q" autofocus/>
+    <nav class="navigation-content">
+        <h1 class="title-display">Welcome back!</h1>
+        <h2 id="date-display"></h2>
+
+        <form id="search-form" action="https://duckduckgo.com/" method="get">
+            <input type="text" id="search-input" placeholder="Search with DuckDuckGo" name="q" autofocus/>
         </form>
 
         <ul>
@@ -48,11 +48,11 @@
         </ul>
 
     </nav>
-    
-    <div class="image">
-        <a href="https://druxorey.github.io/"><img alt="fem" src="static/images/img.webp"></a>
+
+    <div>
+        <a href="https://druxorey.github.io/"><img class="image-display" alt="fem" src="static/images/img.webp"></a>
     </div>
-        
+
     <script type="text/javascript" src="scripts/get_date.js"></script>
 
 </body>

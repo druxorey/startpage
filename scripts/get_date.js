@@ -13,7 +13,7 @@ function showTime() {
 	second = addZero(second);
 
 	document.getElementById(
-		"date"
+		"date-display"
 	).innerHTML = `${today}, ${hour}:${minute}:${second} | ${day}/${month}/${year}`;
 	setTimeout(showTime, 0);
 }
