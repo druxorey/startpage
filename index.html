@@ -3,17 +3,39 @@
 
 <head>
 	<title>~/startpage</title>
-	<link rel="icon" href="static/images/ico.webp" type="image/x-icon" />
+	<link rel="icon" href="static/images/icon.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="static/styles/style.css">
 </head>
 
 <body>
+
+    <header id="settings-content">
+
+        <div class="settings-box">
+            <div class="settings-options">
+                <h1>Search Engine</h1>
+            </div>
+
+            <div class="settings-options">
+            <select id="search-engine-selector" onchange="changeSearchEngine()">
+                <option value="https://search.brave.com/search">Brave</option>
+                <option value="https://www.google.com/search">Google</option>
+                <option value="https://duckduckgo.com/">DuckDuckGo</option>
+            </select>
+            </div>
+        </div>
+
+        <button onclick="hideSettings()" class="settings-hide"></button>
+    </header>
+
+    <button onclick="showSettings()" class="settings-display"></button>
+
     <nav class="navigation-content">
         <h1 class="title-display">Welcome back!</h1>
         <h2 id="date-display"></h2>
 
-        <form id="search-form" action="https://duckduckgo.com/" method="get">
-            <input type="text" id="search-input" placeholder="Search with DuckDuckGo" name="q" autofocus/>
+        <form id="search-form" method="get">
+            <input type="text" id="search-input" placeholder="Search" name="q" autofocus/>
         </form>
 
         <ul>
@@ -54,6 +76,7 @@
     </div>
 
     <script type="text/javascript" src="scripts/get_date.js"></script>
+    <script type="text/javascript" src="scripts/get_search_engine.js"></script>
 
 </body>
 
