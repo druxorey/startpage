@@ -310,3 +310,11 @@ li:first-child {
         width: 64vw;
     }
 }
+
+@media screen and (max-width: 1600px) {
+    * {
+        font-size: 16px;
+    }
+}
+
+
