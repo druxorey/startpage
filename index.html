@@ -14,13 +14,19 @@
         <div class="settings-box">
             <div class="settings-options">
                 <h1>Search Engine</h1>
+                <h1>Colorscheme</h1>
             </div>
 
             <div class="settings-options">
-            <select id="search-engine-selector" onchange="changeSearchEngine()">
+            <select id="search-engine-selector" class="settings-selector" onchange="changeSearchEngine()">
                 <option value="https://search.brave.com/search">Brave</option>
                 <option value="https://www.google.com/search">Google</option>
                 <option value="https://duckduckgo.com/">DuckDuckGo</option>
+            </select>
+
+            <select id="colorscheme-selector" class="settings-selector" onchange="changeColorScheme()">
+                <option value="dracula">Dracula</option>
+                <option value="edge">Edge</option>
             </select>
             </div>
         </div>
@@ -77,6 +83,7 @@
 
     <script type="text/javascript" src="scripts/get_date.js"></script>
     <script type="text/javascript" src="scripts/get_search_engine.js"></script>
+    <script type="text/javascript" src="scripts/set_colorscheme.js"></script>
 
 </body>
 

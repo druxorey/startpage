@@ -1,17 +1,4 @@
 :root {
-    --color-foreground-1: #F8F8F2;
-    --color-foreground-2: #B9BBCB;
-
-    --color-background-1: #44475A;
-    --color-background-2: #282A36;
-    --color-background-3: #1F1F28;
-
-    --color-accent-1: #BD93F9;
-    --color-accent-2: #BD93F933;
-
-    --color-shadow-1: #1D1D26;
-    --color-shadow-2: #46495C;
-
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
 }
@@ -146,7 +133,7 @@ li:first-child {
     background-color: var(--color-accent-2);
 }
 
-#search-engine-selector {
+.settings-selector {
     background-color: var(--color-background-2);
     color: var(--color-foreground-1);
     border: none;
@@ -156,17 +143,17 @@ li:first-child {
     cursor: pointer;
 }
 
-#search-engine-selector:hover {
+.settings-selector:hover {
     background-color: var(--color-background-1);
     transition: var(--transition-speed) ease-in-out;
 }
 
-#search-engine-selector option {
+.settings-selector option {
     height: 3rem;
     background-color: var(--color-background-2);
 }
 
-#search-engine-selector:focus {
+.settings-selector:focus {
     outline: none;
 }
 
