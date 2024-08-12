@@ -1,4 +1,17 @@
 :root {
+    --color-foreground-1: #F8F8F2;
+    --color-foreground-2: #B9BBCB;
+
+    --color-background-1: #44475A;
+    --color-background-2: #282A36;
+    --color-background-3: #1F1F28;
+
+    --color-accent-1: #BD93F9;
+    --color-accent-2: #BD93F933;
+
+    --color-shadow-1: #1D1D26;
+    --color-shadow-2: #46495C;
+
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
 }
