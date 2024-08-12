@@ -4,13 +4,13 @@
 
     --color-background-1: #44475A;
     --color-background-2: #282A36;
-    --color-background-3: #1f1f28;
+    --color-background-3: #1F1F28;
 
     --color-accent-1: #BD93F9;
     --color-accent-2: #BD93F933;
 
-    --color-shadow-1: #01010170;
-    --color-shadow-2: #585B6E;
+    --color-shadow-1: #1D1D26;
+    --color-shadow-2: #46495C;
 
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
@@ -231,7 +231,7 @@ li:first-child {
 .image-display {
     height: 35rem;
     border-radius: var(--border-radius);
-    box-shadow: var(--color-shadow-1) 0rem 0rem 2.75rem;
+    box-shadow: var(--color-shadow-1) 0rem 1rem 2.75rem;
     transition: var(--transition-speed) ease-in-out;
 }
 
@@ -244,7 +244,7 @@ li:first-child {
 .navigation-content {
     background: var(--color-background-3);
     border-radius: var(--border-radius);
-    box-shadow: var(--color-shadow-1) 0rem 0rem 2.75rem;
+    box-shadow: var(--color-shadow-1) 0rem 1rem 2.75rem;
     display: grid;
     padding: 3rem;
     grid-row-gap: 1rem;
