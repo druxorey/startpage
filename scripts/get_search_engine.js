@@ -14,12 +14,14 @@ function changeSearchEngine() {
 
 function loadSavedSearchEngine() {
     var savedSearchEngine = localStorage.getItem('selectedSearchEngine');
+    var searchEngine = document.getElementById('search-engine-selector');
 
     if (savedSearchEngine) {
-        var searchEngine = document.getElementById('search-engine-selector');
         searchEngine.value = savedSearchEngine;
-        changeSearchEngine();
+    } else {
+        searchEngine.value = 'https://duckduckgo.com/';
     }
+    changeSearchEngine();
 }
 
 document.addEventListener('keydown', function(event) {
