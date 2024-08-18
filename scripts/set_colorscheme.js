@@ -4,10 +4,10 @@ var colorschemeList = {
         '--color-foreground-2': '#B9BBCB',
         '--color-background-1': '#44475A',
         '--color-background-2': '#282A36',
-        '--color-background-3': '#1F1F28',
+        '--color-background-3': '#21222C',
         '--color-accent-1': '#BD93F9',
         '--color-accent-2': '#BD93F933',
-        '--color-shadow-1': '#1D1D26',
+        '--color-shadow-1': '#21222C',
         '--color-shadow-2': '#46495C',
     },
     "edge": {
