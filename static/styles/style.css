@@ -14,7 +14,13 @@
 
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
+
+    --icon-settings-open-1: none;
+    --icon-settings-open-2: none;
+    --icon-settings-close-1: none;
+    --icon-settings-close-2: none;
 }
+
 
 @font-face {
     font-family: "default-font";
@@ -174,7 +180,7 @@ li:first-child {
     height: 1.5rem;
     width: 1.5rem;
     background: none;
-    background-image: url("../images/settings-open-1.svg");
+    background-image: var(--icon-settings-open-1);
     background-size: cover;
     border: none;
     cursor: pointer;
@@ -185,7 +191,7 @@ li:first-child {
 }
 
 .settings-display:hover {
-    background-image: url("../images/settings-open-2.svg");
+    background-image: var(--icon-settings-open-2);
     transition: var(--transition-speed) ease-in-out;
 }
 
@@ -195,7 +201,7 @@ li:first-child {
     width: 1.5rem;
     border: none;
     background: none;
-    background-image: url("../images/settings-close-1.svg");
+    background-image: var(--icon-settings-close-1);
     background-size: cover;
     transition: var(--transition-speed) ease-in-out;
 }
@@ -206,7 +212,7 @@ li:first-child {
     cursor: pointer;
     border: none;
     background: none;
-    background-image: url("../images/settings-close-2.svg");
+    background-image: var(--icon-settings-close-2);
     background-size: cover;
     transition: var(--transition-speed) ease-in-out;
 }

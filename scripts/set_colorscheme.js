@@ -9,7 +9,10 @@ var colorschemeList = {
         '--color-accent-2': '#BD93F933',
         '--color-shadow-1': '#21222C',
         '--color-shadow-2': '#D6ACFF',
-
+        '--icon-settings-open-1': 'url("/static/images/dracula-settings-open-1.svg")',
+        '--icon-settings-open-2': 'url("/static/images/dracula-settings-open-2.svg")',
+        '--icon-settings-close-1': 'url("/static/images/dracula-settings-close-1.svg")',
+        '--icon-settings-close-2': 'url("/static/images/dracula-settings-close-2.svg")',
     },
     "dracula-light": {
         '--color-foreground-1': '#44475A',
@@ -21,6 +24,10 @@ var colorschemeList = {
         '--color-accent-2': '#BD93F933',
         '--color-shadow-1': '#C4C7D4',
         '--color-shadow-2': '#D6ACFF',
+        '--icon-settings-open-1': 'url("/static/images/dracula-settings-open-3.svg")',
+        '--icon-settings-open-2': 'url("/static/images/dracula-settings-open-2.svg")',
+        '--icon-settings-close-1': 'url("/static/images/dracula-settings-close-3.svg")',
+        '--icon-settings-close-2': 'url("/static/images/dracula-settings-close-2.svg")',
     },
     "edge": {
         '--color-foreground-1': '#F8F8F8',
@@ -32,6 +39,10 @@ var colorschemeList = {
         '--color-accent-2': '#9B9B9B33',
         '--color-shadow-1': '#2B2B2B',
         '--color-shadow-2': '#B9B9B9',
+        '--icon-settings-open-1': 'url("/static/images/edge-settings-open-1.svg")',
+        '--icon-settings-open-2': 'url("/static/images/edge-settings-open-2.svg")',
+        '--icon-settings-close-1': 'url("/static/images/edge-settings-close-1.svg")',
+        '--icon-settings-close-2': 'url("/static/images/edge-settings-close-2.svg")',
     }
 };
 
