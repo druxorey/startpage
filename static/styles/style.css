@@ -1,16 +1,16 @@
 :root {
-    --color-foreground-1: #F8F8F2;
-    --color-foreground-2: #B9BBCB;
+    --color-foreground-1: transparent;
+    --color-foreground-2: transparent;
 
-    --color-background-1: #44475A;
-    --color-background-2: #282A36;
-    --color-background-3: #21222C;
+    --color-background-1: transparent;
+    --color-background-2: transparent;
+    --color-background-3: transparent;
 
-    --color-accent-1: #BD92F9;
-    --color-accent-2: #BD93F933;
+    --color-accent-1: transparent;
+    --color-accent-2: transparent;
 
-    --color-shadow-1: #21222C;
-    --color-shadow-2: #46495C;
+    --color-shadow-1: transparent;
+    --color-shadow-2: transparent;
 
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
