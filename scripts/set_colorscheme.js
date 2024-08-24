@@ -8,7 +8,8 @@ var colorschemeList = {
         '--color-accent-1': '#BD93F9',
         '--color-accent-2': '#BD93F933',
         '--color-shadow-1': '#21222C',
-        '--color-shadow-2': '#C4C7D4',
+        '--color-shadow-2': '#D6ACFF',
+
     },
     "dracula-light": {
         '--color-foreground-1': '#44475A',
@@ -19,7 +20,7 @@ var colorschemeList = {
         '--color-accent-1': '#BD93F9',
         '--color-accent-2': '#BD93F933',
         '--color-shadow-1': '#C4C7D4',
-        '--color-shadow-2': '#44475A',
+        '--color-shadow-2': '#D6ACFF',
     },
     "edge": {
         '--color-foreground-1': '#F8F8F8',
