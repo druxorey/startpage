@@ -1,5 +1,5 @@
 var colorschemeList = {
-    "dracula": {
+    "dracula-dark": {
         '--color-foreground-1': '#F8F8F2',
         '--color-foreground-2': '#B9BBCB',
         '--color-background-1': '#44475A',
@@ -8,7 +8,18 @@ var colorschemeList = {
         '--color-accent-1': '#BD93F9',
         '--color-accent-2': '#BD93F933',
         '--color-shadow-1': '#21222C',
-        '--color-shadow-2': '#46495C',
+        '--color-shadow-2': '#C4C7D4',
+    },
+    "dracula-light": {
+        '--color-foreground-1': '#44475A',
+        '--color-foreground-2': '#353747',
+        '--color-background-1': '#C4C7D4',
+        '--color-background-2': '#DCDDE5',
+        '--color-background-3': '#F3F4F6',
+        '--color-accent-1': '#BD93F9',
+        '--color-accent-2': '#BD93F933',
+        '--color-shadow-1': '#C4C7D4',
+        '--color-shadow-2': '#44475A',
     },
     "edge": {
         '--color-foreground-1': '#F8F8F8',
@@ -42,7 +53,7 @@ function loadSavedColorscheme() {
     if (savedColorscheme) {
         colorscheme.value = savedColorscheme;
     } else {
-        colorscheme.value = "dracula";
+        colorscheme.value = "dracula-dark";
     }
 
     changeColorScheme();
