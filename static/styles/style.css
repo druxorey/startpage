@@ -15,10 +15,10 @@
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
 
-    --icon-settings-open-1: none;
-    --icon-settings-open-2: none;
-    --icon-settings-close-1: none;
-    --icon-settings-close-2: none;
+    --icon-settings-open-1: url("/static/images/dracula-settings-open-1.svg");
+    --icon-settings-open-2: url("/static/images/dracula-settings-open-2.svg");
+    --icon-settings-close-1: url("../images/dracula-settings-close-1.svg");
+    --icon-settings-close-2: url("../images/dracula-settings-close-2.svg");
 }
 
 

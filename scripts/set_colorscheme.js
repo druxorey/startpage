@@ -11,8 +11,8 @@ var colorschemeList = {
         '--color-shadow-2': '#D6ACFF',
         '--icon-settings-open-1': 'url("/static/images/dracula-settings-open-1.svg")',
         '--icon-settings-open-2': 'url("/static/images/dracula-settings-open-2.svg")',
-        '--icon-settings-close-1': 'url("/static/images/dracula-settings-close-1.svg")',
-        '--icon-settings-close-2': 'url("/static/images/dracula-settings-close-2.svg")',
+        '--icon-settings-close-1': 'url("../images/dracula-settings-close-1.svg")',
+        '--icon-settings-close-2': 'url("../images/dracula-settings-close-2.svg")',
     },
     "dracula-light": {
         '--color-foreground-1': '#44475A',
