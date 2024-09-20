@@ -150,6 +150,7 @@ li:first-child {
     backdrop-filter: blur(16px);
     align-items: center;
     background-color: var(--color-accent-2);
+	z-index: 2;
 }
 
 .settings-selector {
@@ -188,6 +189,7 @@ li:first-child {
     top: 2vh;
     right: 2vw;
     transition: var(--transition-speed) ease-in-out;
+	z-index: 1;
 }
 
 .settings-display:hover {
@@ -222,10 +224,17 @@ li:first-child {
     background: var(--color-background-3);
     box-shadow: var(--color-shadow-1) 0rem 0rem 2.75rem;
     border-radius: var(--border-radius);
-    padding: 3rem;
-    gap: 3rem;
-    flex-direction: row;
+	padding: 3rem;
+    flex-direction: column;
     align-items: center;
+}
+
+.settings-separator {
+	display: flex;
+	gap: 3rem;
+	flex-direction: row;
+	align-items: center;
+
 }
 
 .settings-options {
