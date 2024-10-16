@@ -279,15 +279,6 @@ li:first-child {
     margin-bottom: 0;
 }
 
-.contenedor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-background-1);
-    padding: 2rem;
-    position: relative;
-}
-
 @media (max-width: 1200px) {
     body {
         gap: 0px;
