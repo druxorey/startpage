@@ -245,6 +245,8 @@ li:first-child {
 
 .image-display {
     height: 35rem;
+	width: 20rem;
+	object-fit: cover;
     border-radius: var(--border-radius);
     box-shadow: var(--color-shadow-1) 0rem 1rem 2.75rem;
     transition: var(--transition-speed) ease-in-out;
@@ -252,6 +254,7 @@ li:first-child {
 
 .image-display:hover {
     height: 37rem;
+	width: 22rem;
     box-shadow: var(--color-shadow-2) 0rem 0rem 2rem;
     transition: var(--transition-speed) ease-in-out;
 }
