@@ -325,3 +325,9 @@ li:first-child {
         font-size: 16px;
     }
 }
+
+@media screen and (max-width: 1366px) and (max-height: 758px) {
+    * {
+        font-size: 14px;
+    }
+}
