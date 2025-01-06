@@ -43,6 +43,21 @@ var colorschemeList = {
         '--icon-settings-open-2': 'url("../images/edge-settings-open-2.svg")',
         '--icon-settings-close-1': 'url("../images/edge-settings-close-1.svg")',
         '--icon-settings-close-2': 'url("../images/edge-settings-close-2.svg")',
+    },
+    "gruvbox": {
+        '--color-foreground-1': '#D4BE98',
+        '--color-foreground-2': '#DDC7A1',
+        '--color-background-1': '#141617',
+        '--color-background-2': '#504945',
+        '--color-background-3': '#282828',
+        '--color-accent-1': '#E78A4E',
+        '--color-accent-2': '#E78A4E33',
+        '--color-shadow-1': '#1d2021',
+        '--color-shadow-2': '#A89984',
+        '--icon-settings-open-1': 'url("../images/edge-settings-open-1.svg")',
+        '--icon-settings-open-2': 'url("../images/edge-settings-open-2.svg")',
+        '--icon-settings-close-1': 'url("../images/edge-settings-close-1.svg")',
+        '--icon-settings-close-2': 'url("../images/edge-settings-close-2.svg")',
     }
 };
 
