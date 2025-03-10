@@ -52,8 +52,8 @@ function highlightMatchingLinks() {
 document.addEventListener('keydown', function(event) {
 	if (event.key === 'Escape') {
 		hideSettings();
-	} else if (event.key === ' ') {
-		document.getElementById('search-input').focus();
+    } else if (event.key === ' ') {
+        document.getElementById('search-input').focus();
 	} else if (event.key === 'Enter') {
 		handleSearch(event);
 	} else if (event.key === 'c' && event.ctrlKey) {
@@ -94,6 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (query.startsWith('s:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `${searchEngine}?q=${encodeURIComponent(searchQuery)}`;
+
+		} else if (query.startsWith('r:')) {
+			const searchQuery = query.substring(2);
+			window.location.href = `https://www.reddit.com/search/?q=${encodeURIComponent(searchQuery)}`;
+
+		} else if (query.startsWith('g:')) {
+			const searchQuery = query.substring(2);
+			window.location.href = `https://www.github.com/search/?q=${encodeURIComponent(searchQuery)}`;
+
+		} else if (query.startsWith('i:')) {
+			const searchQuery = query.substring(2);
+			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
+
 		} else {
 			const shortcut = Object.keys(shortcuts).find(key => key.toLowerCase().includes(query));
 			if (shortcut) {
