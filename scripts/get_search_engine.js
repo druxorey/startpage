@@ -42,8 +42,10 @@ function highlightMatchingLinks() {
 		const linkText = link.textContent.toLowerCase();
 		if (linkText.includes(query) && query !== '') {
 			link.style.color = '#FF92DF';
+			link.style.fontWeight = 'bold';
 		} else {
 			link.style.color = '';
+			link.style.fontWeight = 'normal';
 		}
 	});
 }
