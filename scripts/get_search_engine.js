@@ -41,13 +41,19 @@ function highlightMatchingLinks() {
 	links.forEach(link => {
 		const linkText = link.textContent.toLowerCase();
 		if (linkText.includes(query) && query !== '') {
-			link.style.color = '#FF92DF';
 			link.style.fontWeight = 'bold';
 		} else {
-			link.style.color = '';
+			link.style.color = 'var(--color-background-1)';
 			link.style.fontWeight = 'normal';
 		}
 	});
+
+	if (query === '') {
+		links.forEach(link => {
+			link.style.color = 'var(--color-foreground-1)';
+			link.style.fontWeight = 'normal';
+		});
+	}
 }
 
 
