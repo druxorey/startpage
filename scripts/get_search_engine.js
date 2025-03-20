@@ -30,7 +30,12 @@ function loadSavedSearchEngine() {
 
 
 function clearSearchInput() {
+	const links = document.querySelectorAll('ul li a');
 	document.getElementById('search-input').value = '';
+
+	links.forEach(link => {
+		link.style.color = 'var(--color-foreground-1)';
+	});
 }
 
 
