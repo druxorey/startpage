@@ -30,12 +30,9 @@ function loadSavedSearchEngine() {
 
 
 function clearSearchInput() {
-	const links = document.querySelectorAll('ul li a');
 	document.getElementById('search-input').value = '';
-
-	links.forEach(link => {
-		link.style.color = 'var(--color-foreground-1)';
-	});
+	document.getElementById('search-input').focus();
+	highlightMatchingLinks();
 }
 
 
@@ -57,7 +54,7 @@ function highlightMatchingLinks() {
 document.addEventListener('keydown', function(event) {
 	if (event.key === 'Escape') {
 		hideSettings();
-    } else if (event.key === ' ') {
+    } else if (event.key === ' ' && event.altKey) {
         document.getElementById('search-input').focus();
 	} else if (event.key === 'Enter') {
 		handleSearch(event);
