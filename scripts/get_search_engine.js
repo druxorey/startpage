@@ -45,20 +45,12 @@ function highlightMatchingLinks() {
 
 	links.forEach(link => {
 		const linkText = link.textContent.toLowerCase();
-		if (linkText.includes(query) && query !== '') {
-			link.style.fontWeight = 'bold';
-		} else {
+		if (!linkText.includes(query)) {
 			link.style.color = 'var(--color-background-1)';
-			link.style.fontWeight = 'normal';
+		} else {
+			link.style.color = 'var(--color-foreground-1)';
 		}
 	});
-
-	if (query === '') {
-		links.forEach(link => {
-			link.style.color = 'var(--color-foreground-1)';
-			link.style.fontWeight = 'normal';
-		});
-	}
 }
 
 

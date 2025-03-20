@@ -58,7 +58,6 @@ a {
 
 a:hover {
     font-weight: bold;
-    text-shadow: var(--color-shadow-2) 0rem 0rem 0.5rem;
     color: var(--color-accent-1);
     transition: var(--transition-speed) ease;
 }
