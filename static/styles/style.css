@@ -12,13 +12,11 @@
     --color-shadow-1: transparent;
     --color-shadow-2: transparent;
 
+	--button-inactive: transparent;
+	--button-active: transparent;
+
     --transition-speed: 0.25s;
     --border-radius: 0.75rem;
-
-    --icon-settings-open-1: url("../images/dracula-settings-open-1.svg");
-    --icon-settings-open-2: url("../images/dracula-settings-open-2.svg");
-    --icon-settings-close-1: url("../images/dracula-settings-close-1.svg");
-    --icon-settings-close-2: url("../images/dracula-settings-close-2.svg");
 }
 
 
@@ -177,45 +175,38 @@ li:first-child {
 }
 
 .settings-display {
+	display: flex;
+	justify-content: center;
+	background: none;
     height: 1.5rem;
     width: 1.5rem;
-    background: none;
-    background-image: var(--icon-settings-open-1);
-    background-size: cover;
     border: none;
     cursor: pointer;
     position: absolute;
     top: 2vh;
     right: 2vw;
-    transition: var(--transition-speed) ease-in-out;
 	z-index: 1;
 }
 
-.settings-display:hover {
-    background-image: var(--icon-settings-open-2);
-    transition: var(--transition-speed) ease-in-out;
+.svg-icon {
+	width: 1.5rem;
+	height: 1.5rem;
+    filter: var(--button-inactive);
+}
+
+.svg-icon:hover {
+    filter: var(--button-active);
+	cursor: pointer;
 }
 
 .settings-hide {
+	display: flex;
+	justify-content: center;
     margin-top: 2rem;
     height: 1.5rem;
     width: 1.5rem;
+	background: none;
     border: none;
-    background: none;
-    background-image: var(--icon-settings-close-1);
-    background-size: cover;
-    transition: var(--transition-speed) ease-in-out;
-}
-
-.settings-hide:hover {
-    height: 2rem;
-    width: 2rem;
-    cursor: pointer;
-    border: none;
-    background: none;
-    background-image: var(--icon-settings-close-2);
-    background-size: cover;
-    transition: var(--transition-speed) ease-in-out;
 }
 
 .settings-box {
