@@ -12,6 +12,15 @@ This is my personalized startpage, designed to be my browser homepage. It includ
 - **scripts**: This directory contains the scripts used in the startpage.
 - **static**: This directory contains the CSS and other files used in the startpage.
 
+## Keyboard Shortcuts
+
+The following keyboard shortcuts are available on the search page:
+
+- **Escape**: Hide the settings panel.
+- **Alt + Space**: Focus on the search input field.
+- **Enter**: Execute the search.
+- **Ctrl + C**: Clear the search input field.
+
 ## Contribute
 
 If you want to make any change, follow these steps:
