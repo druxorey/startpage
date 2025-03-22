@@ -1,7 +1,12 @@
-function hideSettings() {document.getElementById("settings-content").style.display = 'none';}
+
+function hideSettings() {
+	document.getElementById("settings-content").style.display = 'none';
+}
 
 
-function showSettings() {document.getElementById("settings-content").style.display = 'flex';}
+function showSettings() {
+	document.getElementById("settings-content").style.display = 'flex';
+}
 
 
 function changeSearchEngine() {
@@ -114,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			if (shortcut) {
 				window.location.href = shortcuts[shortcut];
 			} else {
-				alert('Shortcut not found');
+				window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
 			}
 		}
 	};
