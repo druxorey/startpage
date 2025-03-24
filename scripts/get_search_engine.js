@@ -1,11 +1,11 @@
 
 function hideSettings() {
-	document.getElementById("settings-content").style.display = 'none';
+	document.getElementById("settings-container").style.display = 'none';
 }
 
 
 function showSettings() {
-	document.getElementById("settings-content").style.display = 'flex';
+	document.getElementById("settings-container").style.display = 'flex';
 }
 
 
