@@ -272,13 +272,19 @@ li:first-child {
     margin-bottom: 0;
 }
 
+.shortcuts-container {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	height: 3rem;
+}
+
 @media (max-width: 1200px) {
     body {
         gap: 0px;
-        transition: var(--transition-speed) ease-in-out;
     }
 
-    .image-display {
+    .image-display, .shortcuts-container {
         display: none;
     }
 }
@@ -286,8 +292,8 @@ li:first-child {
 @media (max-width: 800px) {
     body {
         background: var(--color-background-2);
-        gap: 0px;
         transition: var(--transition-speed) ease-out;
+        gap: 0px;
     }
 
     ul {
