@@ -90,7 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		'Arch Wiki': 'https://wiki.archlinux.org/',
 		'Explain Shell': 'https://explainshell.com/#',
 		'Techthings': 'https://www.reddit.com/user/devdruxorey/m/techthings/',
-		'Deepseek': 'https://chat.deepseek.com/'
+		'Deepseek': 'https://chat.deepseek.com/',
+		'Calendar': 'https://calendar.google.com/calendar/u/0/r',
+		'Tasks': 'https://tasks.google.com/tasks/',
+		'Drive': 'https://drive.google.com/drive/my-drive',
+		'Notion': 'https://drive.google.com/drive/my-drive',
 	};
 
 	window.handleSearch = function(event) {
