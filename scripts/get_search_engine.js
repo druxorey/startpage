@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'GitHub': 'https://github.com/druxorey',
 		'DevDocs': 'https://devdocs.io/',
 		'W3Schools': 'https://w3schools.com',
-		'Cplusplus': 'https://cplusplus.com/',
+		'Letcode': 'https://leetcode.com/problemset/',
 		'VirusTotal': 'https://www.virustotal.com/gui/home/upload',
 		'Conest': 'https://conest.ciens.ucv.ve/webapp/',
 		'PortalAsig2': 'https://portalasig2.ciens.ucv.ve/#/',
