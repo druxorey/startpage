@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'Deepseek': 'https://chat.deepseek.com/',
 		'Calendar': 'https://calendar.google.com/calendar/u/0/r',
 		'Tasks': 'https://tasks.google.com/tasks/',
+		'Todo': 'https://tasks.google.com/tasks/',
 		'Drive': 'https://drive.google.com/drive/my-drive',
 		'Notion': 'https://notion.so/',
 	};
