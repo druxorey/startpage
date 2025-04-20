@@ -269,6 +269,11 @@ li:first-child {
     background-color: var(--color-background-3);
 }
 
+.svg-container {
+	margin-left: 0.75rem;
+	margin-right: 0.75rem;
+}
+
 .svg-icon {
 	width: 1.5rem;
 	height: 1.5rem;
@@ -278,6 +283,11 @@ li:first-child {
 .svg-icon:hover {
     filter: var(--button-active);
 	cursor: pointer;
+}
+
+#image-container {
+	display: flex;
+	flex-direction: column;
 }
 
 #image-display {
@@ -296,11 +306,21 @@ li:first-child {
     transition: var(--transition-speed) ease-in-out;
 }
 
+#image-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    height: 37rem;
+	width: 22rem;
+}
+
 #icons-box {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 	height: 3rem;
+	width: 100%;
+	margin-left: 0.75rem;
 }
 
 @media (max-width: 1250px) {
