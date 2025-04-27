@@ -32,6 +32,7 @@
 					<option value="dracula-light">Dracula Light</option>
 					<option value="edge">Edge</option>
 					<option value="gruvbox">Gruvbox</option>
+					<option value="cobalt3">Cobalt3</option>
 				</select>
 				</div>
 			</div>
@@ -49,70 +50,69 @@
 	</button>
 
 	<nav id="shortcuts-container">
-		<h1 id="title-display">Jtcarrasco</h1>
+	<!--	<h1 id="title-display">Jtcarrasco</h1>-->
 		<h2 id="date-display"></h2>
 
 		<form id="search-form" method="get" onsubmit="return handleSearch(event)">
 			<input type="text" id="search-input" placeholder="Search" name="q" autofocus/>
 		</form>
 
+		<div id="icons-box">
+			<a href="https://todoist.com" class="svg-container">
+				<img src="static/icons/todoist.svg" class="svg-icon" alt="Calendar Icon">
+			</a>
+			<a href="https://gmail.com" class="svg-container">
+				<img src="static/icons/gmail.svg" class="svg-icon" alt="Calendar Icon">
+			</a>
+			<a href="https://discord.com" class="svg-container">
+				<img src="static/icons/discord.svg" class="svg-icon" alt="Tasks Icon">
+			</a>
+			<a href="https://youtube.com" class="svg-container">
+				<img src="static/icons/youtube.svg" class="svg-icon" alt="Drive Icon">
+			</a>
+			<a href="https://www.plex.tv/" class="svg-container">
+				<img src="static/icons/plex.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+			<a href="https://www.pocketcasts.com/" class="svg-container">
+				<img src="static/icons/pocketcasts.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+			<a href="https://www.rss.joesgarage.synoogy.me/" class="svg-container">
+				<img src="static/icons/rss.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+			<a href="https://mail.google.com/chat/u/0/#chat/dm/kCyscQAAAAE" class="svg-container">
+				<img src="static/icons/chat.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+			<a href="https://twitch.com/" class="svg-container">
+				<img src="static/icons/twitch.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+			<a href="https://reddit.com/" class="svg-container">
+				<img src="static/icons/reddit.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+			<a href="https://github.com/jtcarrasco" class="svg-container">
+				<img src="static/icons/github.svg" class="svg-icon" alt="Notion Icon">
+			</a>
+		</div>
 		<ul>
-			<li>~/Personal </li>
-			<li><a href="https://todoist.com/">Todoist</a></li>
-			<li><a href="https://mail.google.com/chat/u/0/#chat/dm/kCyscQAAAAE">FYF</a></li>
-			<li><a href="youtube">youtube</a></li>
-			<li><a href="https://www.plex.tv/">Plex</a></li>
-			<li><a href="https://pocketcasts.com/">PocketCasts</a></li>
-			<li><a href="https://rss.joesgarage.synology.me//">FreshRSS</a></li>
-			<li><a href="https://discord.com/">Discord</a></li>
-			<li><a href="https://twitch.com/">Twitch</a></li>
-		</ul>
-		<ul>
-			<li>~/dev </li>
-			<li><a href="https://github.com/jtcarrasco">GitHub</a></li>
-			<li><a href="https://devdocs.io/">DevDocs</a></li>
-			<li><a href="https://codeacademy.com">CodeAcademy</a></li>
-			<li><a href="https://leetcode.com/problemset/">Letcode</a></li>
-		</ul>
-		<ul>
-			<li>~/skyrocket 拾</li>
-			<li><a href="https://gmail.com">gmail</a></li>
-			<li><a href="https://managewp.com/">PortalAsig2</a></li>
+			<li>skyrocket  </li>
+			<li><a href="https://managewp.com/">managewp</a></li>
 			<li><a href="https://skyrocket9.monday.com/auth/login_monday/email_password">Monday</a></li>
 			<li><a href="https://chatgpt.com/e">ChatPGT</a></li>
 			<li><a href="https://www.myworkday.com/wday/authgwy/emspmg/login.htmld?returnTo=%2femspmg%2fd%2fhome.htmld">Workday</a></li>
 			<li><a href="https://www.a2hosting.com/d">A2Hosting</a></li>
 		</ul>
 		<ul>
-			<li>~/linux </li>
+			<li>dev </li>
+			<li><a href="https://devdocs.io/">DevDocs</a></li>
+			<li><a href="https://codeacademy.com">CodeAcademy</a></li>
+			<li><a href="https://leetcode.com/problemset/">Letcode</a></li>
+		</ul>
+		<ul>
+			<li>Linux </li>
 			<li><a href="https://github.com/druxorey/dotfiles">Dotfiles</a></li>
 			<li><a href="https://wiki.archlinux.org/">Arch Wiki</a></li>
-			<li><a href="https://explainshell.com/#">Explain Shell</a></li>
-			<li><a href="https://www.reddit.com/user/devdruxorey/m/techthings/">Techthings</a></li>
-			<li><a href="https://chat.deepseek.com/">Deepseek</a></li>
+			<li><a href="https://forum.endeavouros.com/">Endeavour OS</a></li>
 		</ul>
-
 	</nav>
-
-	<div id="image-container">
-		<div id="image-box">
-			<a href="https://druxorey.github.io/"><img id="image-display" alt="fem" src="static/images/img.webp"></a>
-		</div>
-		<div id="icons-box">
-			<a href="https://calendar.google.com/calendar/u/0/r" class="svg-container">
-				<img src="static/icons/calendar.svg" class="svg-icon" alt="Calendar Icon">
-			</a>
-			<a href="https://tasks.google.com/tasks/" class="svg-container">
-				<img src="static/icons/tasks.svg" class="svg-icon" alt="Tasks Icon">
-			</a>
-			<a href="https://drive.google.com/drive/my-drive" class="svg-container">
-				<img src="static/icons/drive.svg" class="svg-icon" alt="Drive Icon">
-			</a>
-			<a href="https://www.notion.so/" class="svg-container">
-				<img src="static/icons/notion.svg" class="svg-icon" alt="Notion Icon">
-			</a>
-		</div>
-	</div>
 
 	<script type="text/javascript" src="scripts/get_date.js"></script>
 	<script type="text/javascript" src="scripts/get_search_engine.js"></script>

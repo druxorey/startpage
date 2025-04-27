@@ -50,6 +50,19 @@ var colorschemeList = {
         '--color-shadow-2': '#A89984',
 		'--button-inactive': 'invert(7%) sepia(10%) saturate(402%) hue-rotate(156deg) brightness(94%) contrast(96%)',
 		'--button-active': 'invert(60%) sepia(75%) saturate(483%) hue-rotate(332deg) brightness(95%) contrast(90%)',
+    },
+    "cobalt3": {
+        '--color-foreground-1': '#fffff', /*text background*/
+        '--color-foreground-2': '#fffff',
+        '--color-background-1': '#00000', /* selection field background*/
+        '--color-background-2': '#00000', /*main background */
+        '--color-background-3': '#00000', /*box background */
+        '--color-accent-1': '#ffc600',
+        '--color-accent-2': '#ffc60033', /* selectionbox */
+        '--color-shadow-1': '#193549',
+        '--color-shadow-2': '#19354933',
+		'--button-inactive': 'invert(7%) sepia(10%) saturate(402%) hue-rotate(156deg) brightness(94%) contrast(96%)',
+		'--button-active': 'invert(60%) sepia(75%) saturate(483%) hue-rotate(332deg) brightness(95%) contrast(90%)',
     }
 };
 

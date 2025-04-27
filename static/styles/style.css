@@ -186,11 +186,11 @@ li:first-child {
     display: grid;
     grid-row-gap: 1rem;
     grid-auto-rows: max-content;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     padding: 3rem;
-    width: 30rem;
-    height: 35rem;
+    width: 60rem;
+   /* height: 35rem;*/
 
     background: var(--color-background-3);
     border-radius: var(--border-radius);
@@ -318,6 +318,7 @@ li:first-child {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
+    grid-column: 1/-1;
 	height: 3rem;
 	width: 100%;
 	margin-left: 0.75rem;
