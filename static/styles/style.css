@@ -4,7 +4,6 @@
 
     --color-background-1: transparent;
     --color-background-2: transparent;
-    --color-background-3: transparent;
 
     --color-accent-1: transparent;
     --color-accent-2: transparent;
@@ -45,7 +44,7 @@ body {
 
     gap: 5vw;
 
-    background: var(--color-background-2);
+    background: var(--color-background-1);
     color: var(--color-foreground-1);
 }
 
@@ -109,7 +108,7 @@ li:first-child {
 	padding: 3rem;
 
     border-radius: var(--border-radius);
-    background: var(--color-background-3);
+    background: var(--color-background-2);
     box-shadow: var(--color-shadow-1) 0rem 0rem 2.75rem;
 }
 
@@ -136,17 +135,17 @@ li:first-child {
     border: none;
     border-radius: var(--border-radius);
 
-    background-color: var(--color-background-2);
+    background-color: var(--color-background-1);
     color: var(--color-foreground-1);
 }
 
 .settings-selector option {
     height: 3rem;
-    background-color: var(--color-background-2);
+    background-color: var(--color-background-1);
 }
 
 .settings-selector:hover {
-    background-color: var(--color-background-1);
+    background-color: var(--color-accent-2);
     transition: var(--transition-speed) ease-in-out;
 }
 
@@ -192,7 +191,7 @@ li:first-child {
     width: 30rem;
     height: 35rem;
 
-    background: var(--color-background-3);
+    background: var(--color-background-2);
     border-radius: var(--border-radius);
     box-shadow: var(--color-shadow-1) 0rem 1rem 2.75rem;
 }
@@ -240,7 +239,7 @@ li:first-child {
     border-radius: var(--border-radius);
     border-width: 0.2rem;
     border-style: solid;
-    background: var(--color-background-2);
+    background: var(--color-background-1);
     color: var(--color-foreground-1);
     transition: var(--transition-speed) ease;
 }
@@ -250,7 +249,7 @@ li:first-child {
     border-width: 0.2rem;
     border-color: var(--color-foreground-2);
     border-radius: var(--border-radius);
-    background: var(--color-background-2);
+    background: var(--color-background-1);
 }
 
 #search-input::placeholder {
@@ -266,7 +265,7 @@ li:first-child {
     border-radius: var(--border-radius);
     border-style: solid;
     outline: none;
-    background-color: var(--color-background-3);
+    background-color: var(--color-background-2);
 }
 
 .svg-container {
@@ -335,7 +334,7 @@ li:first-child {
     }
 
     #search-input {
-        background: var(--color-background-3);
+        background: var(--color-background-2);
     }
 
     #shortcuts-container {
