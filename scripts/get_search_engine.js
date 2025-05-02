@@ -48,7 +48,7 @@ function highlightMatchingLinks() {
 	links.forEach(link => {
 		const linkText = link.textContent.toLowerCase();
 		if (!linkText.includes(query)) {
-			link.style.color = 'var(--color-background-1)';
+			link.style.color = 'var(--color-foreground-2)';
 		} else {
 			link.style.color = 'var(--color-foreground-1)';
 		}
@@ -59,8 +59,8 @@ function highlightMatchingLinks() {
 document.addEventListener('keydown', function(event) {
 	if (event.key === 'Escape') {
 		hideSettings();
-    } else if (event.key === ' ' && event.altKey) {
-        document.getElementById('search-input').focus();
+	} else if (event.key === ' ' && event.altKey) {
+		document.getElementById('search-input').focus();
 	} else if (event.key === 'Enter') {
 		handleSearch(event);
 	} else if (event.key === 'c' && event.ctrlKey) {
