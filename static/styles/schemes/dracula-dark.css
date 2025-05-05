@@ -1,0 +1,16 @@
+body[theme="dracula-dark"] {
+    --color-foreground-1: #F8F8F2;
+    --color-foreground-2: #5a5d6d;
+
+    --color-background-1: #282A36;
+    --color-background-2: #1E1F29;
+
+    --color-accent: #BD93F9;
+    --color-blur: #BD93F933;
+
+    --color-shadow: #1A1B23;
+    --color-highlight: #D6ACFF;
+
+    --button-inactive: brightness(0) saturate(100%) invert(37%) sepia(20%) saturate(343%) hue-rotate(193deg) brightness(90%) contrast(90%);
+    --button-active: invert(68%) sepia(92%) saturate(2532%) hue-rotate(213deg) brightness(101%) contrast(103%);
+}
