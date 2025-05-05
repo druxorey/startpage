@@ -1,0 +1,17 @@
+body[theme="gruvbox"] {
+    --color-foreground-1: #D4BE98;
+    --color-foreground-2: #3c3836;
+
+    --color-background-1: #504945;
+    --color-background-2: #282828;
+
+    --color-accent: #E78A4E;
+    --color-blur: #E78A4E33;
+
+    --color-shadow: #1d2021;
+    --color-highlight: #A89984;
+
+    --button-inactive: brightness(0) saturate(100%) invert(16%) sepia(1%) saturate(2902%) hue-rotate(336deg) brightness(102%) contrast(83%);
+    --button-active: invert(60%) sepia(75%) saturate(483%) hue-rotate(332deg) brightness(95%) contrast(90%);
+}
+

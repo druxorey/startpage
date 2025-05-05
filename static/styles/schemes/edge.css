@@ -1,0 +1,17 @@
+body[theme="edge"] {
+    --color-foreground-1: #F8F8F8;
+    --color-foreground-2: #6B6B6B;
+
+    --color-background-1: #3B3B3B;
+    --color-background-2: #2B2B2B;
+
+    --color-accent: #C9C9C9;
+    --color-blur: #9B9B9B33;
+
+    --color-shadow: #2B2B2B;
+    --color-highlight: #B9B9B9;
+
+    --button-inactive: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(923%) hue-rotate(182deg) brightness(98%) contrast(74%);
+    --button-active: invert(83%) sepia(3%) saturate(26%) hue-rotate(41deg) brightness(104%) contrast(80%);
+}
+
