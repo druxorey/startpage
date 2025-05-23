@@ -1,21 +1,24 @@
 :root {
 	--color-foreground-1: transparent;
 	--color-foreground-2: transparent;
-
 	--color-background-1: transparent;
 	--color-background-2: transparent;
 
-	--color-accent: transparent;
-	--color-blur: transparent;
+	--color-border: transparent;
 
 	--color-shadow: transparent;
 	--color-highlight: transparent;
+
+	--color-accent: transparent;
+	--color-blur: transparent;
 
 	--button-inactive: transparent;
 	--button-active: transparent;
 
 	--transition-speed: 0.25s;
-	--border-radius: 0.75rem;
+	--border-radius: 10px;
+	--border-width: 2px;
+	--shadow-radius: 8px;
 }
 
 
@@ -53,18 +56,20 @@ a {
 	text-decoration: none;
 	font-size: 1rem;
 	color: var(--color-foreground-1);
+
 	transition: var(--transition-speed) ease;
 }
 
 a:hover {
 	font-weight: bold;
 	color: var(--color-accent);
+
 	transition: var(--transition-speed) ease;
 }
 
 ul {
 	margin: 0rem 2rem 0rem 2rem;
-	padding: 0;
+	padding: 0rem;
 	list-style-type: none;
 	white-space: nowrap;
 }
@@ -107,9 +112,11 @@ li:first-child {
 
 	padding: 3rem;
 
-	border-radius: var(--border-radius);
 	background: var(--color-background-2);
-	box-shadow: var(--color-shadow) 0rem 0rem 2.75rem;
+
+	box-shadow: var(--color-shadow) 0rem 0rem var(--shadow-radius);
+	border-radius: var(--border-radius);
+	border: var(--border-width) solid var(--color-border);
 }
 
 #settings-content {
@@ -132,11 +139,12 @@ li:first-child {
 	appearance: none;
 	cursor: pointer;
 
-	border: none;
-	border-radius: var(--border-radius);
-
 	background-color: var(--color-background-1);
 	color: var(--color-foreground-1);
+
+	border-radius: var(--border-radius);
+	border: var(--border-width) solid var(--color-border);
+	box-shadow: var(--color-shadow) 0rem 0rem var(--shadow-radius);
 }
 
 .settings-selector option {
@@ -193,7 +201,8 @@ li:first-child {
 
 	background: var(--color-background-2);
 	border-radius: var(--border-radius);
-	box-shadow: var(--color-shadow) 0rem 1rem 2.75rem;
+	box-shadow: var(--color-shadow) 0rem 0rem var(--shadow-radius);
+	border: var(--border-width) solid var(--color-border);
 }
 
 #title-display {
@@ -235,18 +244,17 @@ li:first-child {
 	width: 100%;
 
 	font-size: 1rem;
-	border-color: transparent;
 	border-radius: var(--border-radius);
-	border-width: 0.2rem;
-	border-style: solid;
+	border: var(--border-width) solid var(--color-border);
+	box-shadow: var(--color-shadow) 0rem 0rem var(--shadow-radius);
+
 	background: var(--color-background-1);
 	color: var(--color-foreground-1);
+
 	transition: var(--transition-speed) ease;
 }
 
 #search-input:hover {
-	border-style: solid;
-	border-width: 0.2rem;
 	border-color: var(--color-foreground-2);
 	border-radius: var(--border-radius);
 	background: var(--color-background-1);
@@ -254,18 +262,12 @@ li:first-child {
 
 #search-input::placeholder {
 	font-size: 1rem;
-	border-width: 0.2rem;
-	border-color: transparent;
 	color: var(--color-foreground-2);
 }
 
 #search-input:focus {
 	border-color: var(--color-accent);
-	border-width: 0.22rem;
-	border-radius: var(--border-radius);
-	border-style: solid;
 	outline: none;
-	background-color: var(--color-background-2);
 }
 
 .svg-container {
@@ -287,22 +289,31 @@ li:first-child {
 #image-container {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	height: 41rem;
+	width: 22rem;
+
+	gap: 1rem;
 }
 
 #image-display {
 	height: 35rem;
 	width: 20rem;
 	object-fit: cover;
+
+	box-shadow: var(--color-shadow) 0rem 0rem var(--shadow-radius);
 	border-radius: var(--border-radius);
-	box-shadow: var(--color-shadow) 0rem 1rem 2.75rem;
+	border: var(--border-width) solid var(--color-border);
+
 	transition: var(--transition-speed) ease-in-out;
 }
 
 #image-display:hover {
 	height: 37rem;
 	width: 22rem;
-	box-shadow: var(--color-highlight) 0rem 0rem 2rem;
+	box-shadow: var(--color-highlight) 0rem 0rem 16px;
 	transition: var(--transition-speed) ease-in-out;
+	border: var(--border-width) solid var(--color-highlight);
 }
 
 #image-box {
@@ -310,16 +321,28 @@ li:first-child {
 	align-items: center;
 	justify-content: center;
 	height: 37rem;
-	width: 22rem;
+}
+
+#image-link-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: 0rem;
 }
 
 #icons-box {
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: center;
-	height: 3rem;
-	width: 100%;
-	margin-left: 0.75rem;
+	height: calc(3rem - 4px);
+	width: 20rem;
+
+	background: var(--color-background-2);
+
+	box-shadow: var(--color-shadow) 0rem 0rem var(--shadow-radius);
+	border-radius: var(--border-radius);
+	border: var(--border-width) solid var(--color-border);
 }
 
 @media (max-width: 1250px) {
