@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'Letcode': 'https://leetcode.com/problemset/',
 		'Mercado Libre': 'https://www.mercadolibre.com.ve/',
 		'Modrinth': 'https://modrinth.com/dashboard',
+		'NotebookLM': 'https://notebooklm.google.com/',
 		'Notion': 'https://notion.so/',
 		'Reddit': 'https://reddit.com/',
 		'PortalAsig2': 'https://portalasig2.ciens.ucv.ve/#/',
