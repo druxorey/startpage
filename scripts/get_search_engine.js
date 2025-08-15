@@ -42,6 +42,7 @@ function clearSearchInput() {
 
 
 function highlightMatchingLinks() {
+	document.getElementById('search-input').value = document.getElementById('search-input').value.replace(/^\s+/, '');
 	const query = document.getElementById('search-input').value.toLowerCase();
 	const links = document.querySelectorAll('ul li a');
 
@@ -59,7 +60,7 @@ function highlightMatchingLinks() {
 document.addEventListener('keydown', function(event) {
 	if (event.key === 'Escape') {
 		hideSettings();
-	} else if (event.key === ' ' && event.altKey) {
+	} else if (event.key === ' ') {
 		document.getElementById('search-input').focus();
 	} else if (event.key === 'Enter') {
 		handleSearch(event);
