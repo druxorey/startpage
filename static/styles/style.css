@@ -1,18 +1,19 @@
 :root {
-	--drx-color-base: #282A36;
-	--drx-color-surface: #282A36;
-	--drx-color-overlay: #282A36;
-	--drx-color-highlight: #282A36;
+	--drx-color-base: #232429;
+	--drx-color-surface: #232429;
+	--drx-color-overlay: #232429;
+	--drx-color-highlight: #232429;
 
-	--drx-color-text: #282A36;
-	--drx-color-subtext: #282A36;
-	--drx-color-deactivate: #282A36;
+	--drx-color-text: #232429;
+	--drx-color-subtext: #232429;
+	--drx-color-deactivate: #232429;
 
-	--drx-color-accent: #282A36;
-	--drx-color-important: #282A36;
+	--drx-color-accent: #232429;
+	--drx-color-important: #232429;
+	--drx-color-settings: #2324293F;
 
-    --drx-button-inactive: #282A36;
-    --drx-button-active: #282A36;
+    --drx-button-inactive: brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(436%) hue-rotate(34deg) brightness(100%) contrast(94%);
+    --drx-button-active: brightness(0) saturate(100%) invert(73%) sepia(41%) saturate(3824%) hue-rotate(211deg) brightness(99%) contrast(97%);
 
 	--drx-transition-speed: 0.25s;
 	--drx-border-radius-big: 10px;
