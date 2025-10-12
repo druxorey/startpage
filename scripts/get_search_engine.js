@@ -72,6 +72,7 @@ document.addEventListener('keydown', function(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
 	const shortcuts = {
+		'Druxorey': 'https://druxorey.github.io/',
 		'Arch Wiki': 'https://wiki.archlinux.org/',
 		'Calendar': 'https://calendar.google.com/calendar/u/0/r',
 		'Campus Virtual': 'https://campusvirtualucv.org/ead/login/index.php',
