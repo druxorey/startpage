@@ -128,6 +128,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
 
+		} else if (query.startsWith('a:')) {
+			const searchQuery = query.substring(2);
+			window.location.href = `https://wiki.archlinux.org/index.php?search=${encodeURIComponent(searchQuery)}`;
+
 		} else {
 			const shortcut = Object.keys(shortcuts).find(key => key.toLowerCase().includes(query));
 			if (shortcut) {
