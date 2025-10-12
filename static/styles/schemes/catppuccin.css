@@ -1,0 +1,17 @@
+body[theme="catppuccin"] {
+	--drx-color-base: #181825;
+	--drx-color-surface: #1E1E2E;
+	--drx-color-overlay: #313244;
+	--drx-color-highlight: #45475A;
+
+	--drx-color-text: #CDD6F4;
+	--drx-color-subtext: #A6ADC8;
+	--drx-color-deactivate: #6C7086;
+
+	--drx-color-accent: #cba6f7;
+	--drx-color-important: #F2CDCD;
+	--drx-color-settings: #cba6f73F;
+
+    --drx-button-inactive: brightness(0) saturate(100%) invert(74%) sepia(8%) saturate(701%) hue-rotate(190deg) brightness(94%) contrast(90%);
+    --drx-button-active: brightness(0) saturate(100%) invert(78%) sepia(47%) saturate(1323%) hue-rotate(199deg) brightness(92%) contrast(111%);
+}

@@ -1,0 +1,17 @@
+body[theme="nord"] {
+	--drx-color-base: #2E3440;
+	--drx-color-surface: #3B4252;
+	--drx-color-overlay: #434C5E;
+	--drx-color-highlight: #4C566A;
+
+	--drx-color-text: #ECEFF4;
+	--drx-color-subtext: #D8DEE9;
+	--drx-color-deactivate: #616E88;
+
+	--drx-color-accent: #81A1C1;
+	--drx-color-important: #88C0D0;
+	--drx-color-settings: #81A1C13F;
+
+    --drx-button-inactive: brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(1107%) hue-rotate(187deg) brightness(98%) contrast(87%);
+    --drx-button-active: brightness(0) saturate(100%) invert(65%) sepia(39%) saturate(286%) hue-rotate(169deg) brightness(90%) contrast(90%);
+}
