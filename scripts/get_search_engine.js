@@ -49,9 +49,9 @@ function highlightMatchingLinks() {
 	links.forEach(link => {
 		const linkText = link.textContent.toLowerCase();
 		if (!linkText.includes(query)) {
-			link.style.color = 'var(--color-foreground-2)';
+			link.style.color = 'var(--drx-color-deactivate)';
 		} else {
-			link.style.color = 'var(--color-foreground-1)';
+			link.style.color = 'var(--drx-color-text)';
 		}
 	});
 }

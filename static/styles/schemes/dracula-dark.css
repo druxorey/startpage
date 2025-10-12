@@ -1,17 +1,17 @@
 body[theme="dracula-dark"] {
-    --color-foreground-1: #F8F8F2;
-    --color-foreground-2: #5a5d6d;
-    --color-background-1: #282A36;
-    --color-background-2: #1E1F29;
+	--drx-color-base: #1E1F29;
+	--drx-color-surface: #282A36;
+	--drx-color-overlay: #44475A;
+	--drx-color-highlight: #525568;
 
-	--color-border: #363948;
+	--drx-color-text: #F8F8F2;
+	--drx-color-subtext: #BABCC9;
+	--drx-color-deactivate: #707487;
 
-    --color-shadow: #1A1B23;
-    --color-highlight: #D6ACFF;
+	--drx-color-accent: #BD93F9;
+	--drx-color-important: #D6ACFF;
+	--drx-color-settings: #BD93F93F;
 
-    --color-accent: #BD93F9;
-    --color-blur: #BD93F93F;
-
-    --button-inactive: invert(23%) sepia(12%) saturate(990%) hue-rotate(195deg) brightness(104%) contrast(85%);
-    --button-active: invert(65%) sepia(28%) saturate(1637%) hue-rotate(211deg) brightness(100%) contrast(96%);
+    --drx-button-inactive: brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(436%) hue-rotate(34deg) brightness(100%) contrast(94%);
+    --drx-button-active: brightness(0) saturate(100%) invert(73%) sepia(41%) saturate(3824%) hue-rotate(211deg) brightness(99%) contrast(97%);
 }

@@ -1,18 +1,18 @@
 body[theme="gruvbox"] {
-    --color-foreground-1: #EBDBB2;
-    --color-foreground-2: #7C6F64;
-    --color-background-1: #3C3836;
-    --color-background-2: #282828;
+	--drx-color-base: #282828;
+	--drx-color-surface: #3c3836;
+	--drx-color-overlay: #504945;
+	--drx-color-highlight: #665c54;
 
-	--color-border: #504945;
+	--drx-color-text: #ebdbb2;
+	--drx-color-subtext: #d5c4a1;
+	--drx-color-deactivate: #928374;
 
-    --color-shadow: #1d2021;
-    --color-highlight: #D3869B;
+	--drx-color-accent: #d65d0e;
+	--drx-color-important: #fe8019;
+	--drx-color-settings: #d65d0e3F;
 
-    --color-accent: #D3869B;
-    --color-blur: #D3869B3F;
-
-    --button-inactive: invert(29%) sepia(15%) saturate(238%) hue-rotate(338deg) brightness(96%) contrast(97%);
-    --button-active: invert(78%) sepia(88%) saturate(2096%) hue-rotate(291deg) brightness(92%) contrast(77%);
+    --drx-button-inactive: brightness(0) saturate(100%) invert(87%) sepia(4%) saturate(1698%) hue-rotate(3deg) brightness(92%) contrast(90%);
+    --drx-button-active: brightness(0) saturate(100%) invert(41%) sepia(84%) saturate(840%) hue-rotate(350deg) brightness(87%) contrast(101%);
 }
 
