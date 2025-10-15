@@ -69,44 +69,41 @@ document.addEventListener('keydown', function(event) {
 	}
 });
 
+async function loadShortcuts() {
+    const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/config/brave/bookmarks.yaml';
+    try {
+        const response = await fetch(yamlUrl);
+        const yamlText = await response.text();
 
-document.addEventListener('DOMContentLoaded', function() {
-	const shortcuts = {
-		'Druxorey': 'https://druxorey.github.io/',
-		'Arch Wiki': 'https://wiki.archlinux.org/',
-		'Calendar': 'https://calendar.google.com/calendar/u/0/r',
-		'Campus Virtual': 'https://campusvirtualucv.org/ead/login/index.php',
-		'CiensMail': 'https://correo.ciens.ucv.ve',
-		'Conest': 'https://conest.ciens.ucv.ve/webapp/',
-		'Daily Dev': 'https://app.daily.dev/',
-		'Deepseek': 'https://chat.deepseek.com/',
-		'DevDocs': 'https://devdocs.io/',
-		'Dotfiles': 'https://github.com/druxorey/dotfiles',
-		'Drive': 'https://drive.google.com/drive/my-drive',
-		'Escritorio Remoto': 'https://remotedesktop.google.com/access',
-		'Explain Shell': 'https://explainshell.com/#',
-		'Gemini': 'https://gemini.google.com/app',
-		'Geogebra': 'https://www.geogebra.org/calculator',
-		'GitHub': 'https://github.com/druxorey',
-		'Gmail': 'https://mail.google.com/mail/u/0/#inbox',
-		'Ivanime': 'https://www.ivanime.com/',
-		'Letcode': 'https://leetcode.com/problemset/',
-		'Mercado Libre': 'https://www.mercadolibre.com.ve/',
-		'Modrinth': 'https://modrinth.com/dashboard',
-		'NotebookLM': 'https://notebooklm.google.com/',
-		'Notion': 'https://notion.so/',
-		'Reddit': 'https://reddit.com/',
-		'PortalAsig2': 'https://portalasig2.ciens.ucv.ve/#/',
-		'Tasks': 'https://tasks.google.com/tasks/',
-		'Techthings': 'https://www.reddit.com/user/devdruxorey/m/techthings/',
-		'The Pirate Bay': 'https://thepiratebay.org/',
-		'Traductor': 'https://translate.google.com/',
-		'Translate': 'https://translate.google.com/',
-		'Todo': 'https://tasks.google.com/tasks/',
-		'VirusTotal': 'https://www.virustotal.com/gui/home/upload',
-		'Youtube': 'https://www.youtube.com/',
-		'W3Schools': 'https://w3schools.com',
-	};
+        // Parse YAML manually
+        const shortcutsArray = yamlText
+            .split('\n')
+            .filter(line => line.trim() && !line.startsWith('#')) // Remove empty lines and comments
+            .reduce((acc, line) => {
+                const match = line.match(/^\s*-\s*name:\s*(.+)|^\s*url:\s*(.+)/);
+                if (match) {
+                    if (match[1]) acc.push({ name: match[1].trim() });
+                    if (match[2]) acc[acc.length - 1].url = match[2].trim();
+                }
+                return acc;
+            }, []);
+
+        // Convert YAML array to dictionary
+        const shortcuts = shortcutsArray.reduce((acc, item) => {
+            acc[item.name] = item.url;
+            return acc;
+        }, {});
+
+        return shortcuts;
+    } catch (error) {
+        console.error('Error loading shortcuts:', error);
+        return {};
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', async function() {
+	const shortcuts = await loadShortcuts();
 
 	window.handleSearch = function(event) {
 		event.preventDefault();
@@ -134,12 +131,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			window.location.href = `https://wiki.archlinux.org/index.php?search=${encodeURIComponent(searchQuery)}`;
 
 		} else {
-			const shortcut = Object.keys(shortcuts).find(key => key.toLowerCase().includes(query));
-			if (shortcut) {
-				window.location.href = shortcuts[shortcut];
-			} else {
-				window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
-			}
+            const shortcut = Object.keys(shortcuts).find(key => 
+                key.toLowerCase().split(' ').some(word => word.startsWith(query.trim()))
+            );
+
+            if (shortcut) {
+                window.location.href = shortcuts[shortcut];
+            } else {
+                 window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
+            }
 		}
 	};
 
