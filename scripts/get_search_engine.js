@@ -131,14 +131,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 			window.location.href = `https://wiki.archlinux.org/index.php?search=${encodeURIComponent(searchQuery)}`;
 
 		} else {
-            const shortcut = Object.keys(shortcuts).find(key => 
-                key.toLowerCase().split(' ').some(word => word.startsWith(query.trim()))
+            const shortcut = Object.keys(shortcuts).find(key =>
+                key.toLowerCase().split(' ').some(word => word.includes(query.trim()))
             );
 
             if (shortcut) {
                 window.location.href = shortcuts[shortcut];
-            } else {
-                 window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
             }
 		}
 	};
