@@ -122,6 +122,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.github.com/search/?q=${encodeURIComponent(searchQuery)}`;
 
+		} else if (query.startsWith('y:')) {
+			const searchQuery = query.substring(2);
+			window.location.href = `https://www.youtube.com/search/?q=${encodeURIComponent(searchQuery)}`;
+
 		} else if (query.startsWith('i:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
