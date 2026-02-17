@@ -1,73 +1,9 @@
 
-function hideSettings() {
-	document.getElementById("settings-container").style.display = 'none';
-}
-
-
-function showSettings() {
-	document.getElementById("settings-container").style.display = 'flex';
-}
-
-
-function changeSearchEngine() {
-	var form = document.getElementById('search-form');
-	var input = document.getElementById('search-input');
-	var searchEngine = document.getElementById("search-engine-selector");
-
-	form.action = searchEngine.value;
-	input.placeholder = "Search with " + searchEngine.options[searchEngine.selectedIndex].text;
-
-	localStorage.setItem('selectedSearchEngine', searchEngine.value);
-}
-
-
-function loadSavedSearchEngine() {
-	var savedSearchEngine = localStorage.getItem('selectedSearchEngine');
-	var searchEngine = document.getElementById('search-engine-selector');
-
-	if (savedSearchEngine) {
-		searchEngine.value = savedSearchEngine;
-	} else {
-		searchEngine.value = 'https://duckduckgo.com/';
-	}
-	changeSearchEngine();
-}
-
-
 function clearSearchInput() {
 	document.getElementById('search-input').value = '';
 	document.getElementById('search-input').focus();
 	highlightMatchingLinks();
 }
-
-
-function highlightMatchingLinks() {
-	document.getElementById('search-input').value = document.getElementById('search-input').value.replace(/^\s+/, '');
-	const query = document.getElementById('search-input').value.toLowerCase();
-	const links = document.querySelectorAll('ul li a');
-
-	links.forEach(link => {
-		const linkText = link.textContent.toLowerCase();
-		if (!linkText.includes(query)) {
-			link.style.color = 'var(--drx-color-deactivate)';
-		} else {
-			link.style.color = 'var(--drx-color-text)';
-		}
-	});
-}
-
-
-document.addEventListener('keydown', function(event) {
-	if (event.key === 'Escape') {
-		hideSettings();
-	} else if (event.key === ' ') {
-		document.getElementById('search-input').focus();
-	} else if (event.key === 'Enter') {
-		handleSearch(event);
-	} else if (event.key === 'c' && event.ctrlKey) {
-		clearSearchInput();
-	}
-});
 
 async function loadShortcuts() {
     const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/config/brave/bookmarks.yaml';
@@ -102,8 +38,56 @@ async function loadShortcuts() {
 }
 
 
+function findBestMatch(query) {
+	if (!query || !window.currentShortcuts) return null;
+	const names = Object.keys(window.currentShortcuts);
+	
+	// Priority 1: The name starts with the query
+	let match = names.find(name => name.toLowerCase().startsWith(query));
+	if (match) return { name: match, type: 'start' };
+
+	// Priority 2: Any word in the name starts with the query
+	match = names.find(name => name.toLowerCase().split(' ').some(word => word.includes(query)));
+	if (match) return { name: match, type: 'word' };
+
+	return null;
+}
+
+
+function highlightMatchingLinks() {
+	const input = document.getElementById('search-input');
+	input.value = input.value.replace(/^\s+/, '');
+	const query = input.value.toLowerCase();
+	const links = document.querySelectorAll('ul li a');
+	const suggestionBox = document.getElementById('search-suggestion');
+
+	links.forEach(link => {
+		const linkText = link.textContent.toLowerCase();
+		if (!linkText.includes(query) && query !== '') {
+			link.style.color = 'var(--drx-color-deactivate)';
+		} else {
+			link.style.color = 'var(--drx-color-text)';
+		}
+	});
+
+	const matchData = findBestMatch(query);
+	window.currentMatch = matchData;
+
+	if (matchData) {
+		const matchName = matchData.name;
+		const queryIndex = matchName.toLowerCase().indexOf(query);
+		const suffix = matchName.substring(queryIndex + query.length);
+		
+		suggestionBox.textContent = input.value + suffix;
+	} else {
+		suggestionBox.textContent = '';
+	}
+}
+
+
 document.addEventListener('DOMContentLoaded', async function() {
 	const shortcuts = await loadShortcuts();
+	window.currentShortcuts = shortcuts;
 
 	window.handleSearch = function(event) {
 		event.preventDefault();
@@ -113,40 +97,27 @@ document.addEventListener('DOMContentLoaded', async function() {
 		if (query.startsWith('s:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `${searchEngine}?q=${encodeURIComponent(searchQuery)}`;
-
 		} else if (query.startsWith('r:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.reddit.com/search/?q=${encodeURIComponent(searchQuery)}`;
-
 		} else if (query.startsWith('g:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.github.com/search/?q=${encodeURIComponent(searchQuery)}`;
-
 		} else if (query.startsWith('y:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.youtube.com/search/?q=${encodeURIComponent(searchQuery)}`;
-
 		} else if (query.startsWith('i:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
-
 		} else if (query.startsWith('a:')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://wiki.archlinux.org/index.php?search=${encodeURIComponent(searchQuery)}`;
-
 		} else {
-            const shortcut = Object.keys(shortcuts).find(key =>
-                key.toLowerCase().split(' ').some(word => word.includes(query.trim()))
-            );
-
-            if (shortcut) {
-                window.location.href = shortcuts[shortcut];
+            if (window.currentMatch) {
+                window.location.href = shortcuts[window.currentMatch.name];
             }
 		}
 	};
 
 	document.getElementById('search-input').addEventListener('input', highlightMatchingLinks);
 });
-
-
-loadSavedSearchEngine();

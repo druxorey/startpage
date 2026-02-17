@@ -55,7 +55,10 @@
 		<h2 id="date-display"></h2>
 
 		<form id="search-form" method="get" onsubmit="return handleSearch(event)">
-			<input type="text" id="search-input" placeholder="Search" name="q" autofocus/>
+			<div class="search-container">
+				<div id="search-suggestion"></div>
+				<input type="text" id="search-input" placeholder="Search" name="q" autofocus autocomplete="off" />
+			</div>
 		</form>
 
 		<ul>
@@ -114,8 +117,9 @@
 	</div>
 
 	<script type="text/javascript" src="scripts/get_date.js"></script>
-	<script type="text/javascript" src="scripts/get_search_engine.js"></script>
+	<script type="text/javascript" src="scripts/get_search.js"></script>
 	<script type="text/javascript" src="scripts/set_colorscheme.js"></script>
+	<script type="text/javascript" src="scripts/set_settings.js"></script>
 
 </body>
 

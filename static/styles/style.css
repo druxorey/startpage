@@ -67,7 +67,7 @@ a:hover {
 }
 
 ul {
-	margin: 0rem 2rem 0rem 2rem;
+	margin: 0rem 0rem 0rem 1.75rem;
 	padding: 0rem;
 	list-style-type: none;
 	white-space: nowrap;
@@ -159,7 +159,7 @@ li:first-child {
 	display: flex;
 	position: absolute;
 	justify-content: center;
-	z-index: 1;
+	z-index: 2;
 
 	height: 1.5rem;
 	width: 1.5rem;
@@ -189,8 +189,8 @@ li:first-child {
 	grid-auto-rows: max-content;
 	grid-template-columns: 1fr 1fr;
 
-	padding: 3rem;
-	width: 30rem;
+	padding: 3rem 5rem;
+	width: 25rem;
 	height: 35rem;
 
 	background: var(--drx-color-surface);
@@ -220,48 +220,60 @@ li:first-child {
 }
 
 #search-form {
-	margin-top: 0rem;
-	margin-bottom: 2.3rem;
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
 	grid-column: 1/-1;
+	text-align: left;
+}
 
-	text-align: center;
+.search-container {
+	position: relative;
+	width: 100%;
+	background: var(--drx-color-overlay);
+	border: 2px solid var(--drx-color-overlay);
+	border-radius: 4rem;
+	transition: var(--drx-transition-speed) ease;
+	display: flex;
+	justify-content: center;
+}
+
+.search-container:hover {
+	border-color: var(--drx-color-highlight);
+}
+
+.search-container:focus-within {
+	border-color: var(--drx-color-accent);
+}
+
+#search-suggestion, #search-input {
+	font-size: 1rem;
+	font-family: inherit;
+	padding: 0.5rem 1rem;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#search-suggestion {
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--drx-color-deactivate);
+	pointer-events: none;
+	white-space: pre;
 }
 
 #search-input {
-	justify-content: start;
-	text-align: center;
-
-	margin-top: 1rem;
-	height: 100%;
-	width: 100%;
-
-	font-size: 1rem;
-	border: 2px solid var(--drx-color-overlay);
-	border-radius: var(--drx-border-radius-small);
-
-	background: var(--drx-color-overlay);
+	background: transparent;
+	border: none;
+	outline: none;
 	color: var(--drx-color-text);
-
-	transition: var(--drx-transition-speed) ease;
-}
-
-#search-input:hover {
-	border: 2px solid var(--drx-color-highlight);
-	border-radius: var(--drx-border-radius-small);
-	transition: var(--drx-transition-speed) ease;
+	position: relative;
+	z-index: 1;
 }
 
 #search-input::placeholder {
-	font-size: 1rem;
-	color: var(--drx-color-text);
-	transition: var(--drx-transition-speed) ease;
-}
-
-#search-input:focus {
-	border: 2px solid var(--drx-color-accent);
-	border-color: var(--drx-color-accent);
-	outline: none;
-	transition: var(--drx-transition-speed) ease;
+	color: var(--drx-color-deactivate);
 }
 
 .svg-container {
