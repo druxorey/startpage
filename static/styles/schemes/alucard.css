@@ -1,0 +1,17 @@
+body[theme="alucard"] {
+	--drx-color-base: #FFFBEB;
+	--drx-color-surface: #EDE9DA;
+	--drx-color-overlay: #DEDBCC;
+    --drx-color-highlight: #CECCC0;
+
+    --drx-color-text: #1F1F1F;
+    --drx-color-subtext: #6C664B;
+    --drx-color-deactivate: #BCBAB3;
+
+    --drx-color-accent: #CB3A2A;
+	--drx-color-important: #E1776B;
+	--drx-color-settings: #CB3A2A3F;
+
+    --drx-button-inactive: brightness(0) saturate(100%) invert(40%) sepia(6%) saturate(1468%) hue-rotate(196deg) brightness(90%) contrast(93%);
+    --drx-button-active: brightness(0) saturate(100%) invert(77%) sepia(36%) saturate(3180%) hue-rotate(281deg) brightness(95%) contrast(94%);
+}

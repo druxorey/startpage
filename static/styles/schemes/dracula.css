@@ -1,15 +1,15 @@
-body[theme="dracula-dark"] {
-	--drx-color-base: #1E1F29;
-	--drx-color-surface: #282A36;
-	--drx-color-overlay: #44475A;
-	--drx-color-highlight: #525568;
+body[theme="dracula"] {
+	--drx-color-base: #191A21;
+	--drx-color-surface: #21222C;
+	--drx-color-overlay: #282A36;
+	--drx-color-highlight: #343746;
 
 	--drx-color-text: #F8F8F2;
 	--drx-color-subtext: #BABCC9;
 	--drx-color-deactivate: #707487;
 
 	--drx-color-accent: #BD93F9;
-	--drx-color-important: #D6ACFF;
+	--drx-color-important: #ED9EFF;
 	--drx-color-settings: #BD93F93F;
 
     --drx-button-inactive: brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(436%) hue-rotate(34deg) brightness(100%) contrast(94%);

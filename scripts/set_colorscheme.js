@@ -9,7 +9,7 @@ function changeColorScheme() {
 }
 
 function loadSavedColorscheme() {
-    const savedColorscheme = localStorage.getItem("selectedColorscheme") ?? 'dracula-dark';
+    const savedColorscheme = localStorage.getItem("selectedColorscheme") ?? 'dracula';
     const colorscheme = document.getElementById("colorscheme-selector");
 
     colorscheme.value = savedColorscheme;
