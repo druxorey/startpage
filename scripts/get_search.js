@@ -94,22 +94,22 @@ document.addEventListener('DOMContentLoaded', async function() {
 		const query = document.getElementById('search-input').value.toLowerCase();
 		const searchEngine = document.getElementById('search-engine-selector').value;
 
-		if (query.startsWith('s:')) {
+		if (query.startsWith('s/')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `${searchEngine}?q=${encodeURIComponent(searchQuery)}`;
-		} else if (query.startsWith('r:')) {
+		} else if (query.startsWith('r/')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.reddit.com/search/?q=${encodeURIComponent(searchQuery)}`;
-		} else if (query.startsWith('g:')) {
+		} else if (query.startsWith('g/')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.github.com/search/?q=${encodeURIComponent(searchQuery)}`;
-		} else if (query.startsWith('y:')) {
+		} else if (query.startsWith('y/')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.youtube.com/search/?q=${encodeURIComponent(searchQuery)}`;
-		} else if (query.startsWith('i:')) {
+		} else if (query.startsWith('i/')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
-		} else if (query.startsWith('a:')) {
+		} else if (query.startsWith('a/')) {
 			const searchQuery = query.substring(2);
 			window.location.href = `https://wiki.archlinux.org/index.php?search=${encodeURIComponent(searchQuery)}`;
 		} else {

@@ -1,8 +1,8 @@
 body[theme="dracula"] {
 	--drx-color-base: #191A21;
 	--drx-color-surface: #21222C;
-	--drx-color-overlay: #282A36;
-	--drx-color-highlight: #343746;
+	--drx-color-overlay: #343746;
+	--drx-color-highlight: #44475A;
 
 	--drx-color-text: #F8F8F2;
 	--drx-color-subtext: #BABCC9;
