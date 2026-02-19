@@ -33,6 +33,14 @@ If you want to make any change, follow these steps:
 6. Push your changes to your forked repository: `git push origin your-branch-name`.
 7. Open a Pull Request in this repository and reference the original issue.
 
+## Setup
+
+1. Clone this repo and customize it.
+2. Open the `index.html` file in your browser.
+3. Set it as your homepage on your browser:
+    - **Firefox**: Settings > Home > Homepage and new windows.
+    - **Chrome/Chromium/Brave**: Settings > Appearance > Show home button.
+
 ## License
 
 This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for more details.
