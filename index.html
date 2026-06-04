@@ -1,127 +1,135 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" data-theme="dracula-dark">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>~/startpage</title>
-	<link rel="stylesheet" href="static/styles/style.css">
-    <link id="colorscheme-style" rel="stylesheet" href="">
-	<link rel="icon" href="static/icons/icon.svg" type="image/x-icon" />
+	<title>Startpage</title>
+	<link rel="stylesheet" href="/src/styles/main.css">
+	<link rel="icon" href="/src/icons/icon.svg" type="image/x-icon" />
 </head>
-
 <body>
 
-	<header id="settings-container">
-
-		<div id="settings-box">
-			<div id="settings-content">
-				<div class="settings-options">
-					<h1>Search Engine</h1>
-					<h1>Colorscheme</h1>
-				</div>
-
-				<div class="settings-options">
-				<select id="search-engine-selector" class="settings-selector" onchange="changeSearchEngine()">
-					<option value="https://search.brave.com/search">Brave</option>
-					<option value="https://www.google.com/search">Google</option>
-					<option value="https://duckduckgo.com/">DuckDuckGo</option>
-				</select>
-
-				<select id="colorscheme-selector" class="settings-selector" onchange="changeColorScheme()">
-					<option value="dracula">Dracula</option>
-					<option value="alucard">Alucard</option>
-					<option value="gruvbox">Gruvbox</option>
-					<option value="nord">Nord</option>
-					<option value="catppuccin">Catppuccin</option>
-				</select>
-				</div>
-			</div>
-
-			<button onclick="hideSettings()" id="settings-hide">
-				<img src="static/icons/close.svg" class="svg-icon" alt="Settings Icon">
-			</button>
-
-		</div>
-
-	</header>
-
-	<button onclick="showSettings()" id="settings-display">
-		<img src="static/icons/settings.svg" class="svg-icon" alt="Settings Icon">
+	<button id="settings-toggle" class="settings-btn" aria-label="Open Settings">
+		<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<circle cx="12" cy="12" r="3"></circle>
+			<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+		</svg>
 	</button>
 
-	<nav id="shortcuts-container">
-		<h1 id="title-display">Welcome back!</h1>
-		<h2 id="date-display"></h2>
+	<main class="dashboard-container">
+		
+		<section class="content-card">
+			<header class="card-header">
+				<h1 class="greeting-title">Welcome back!</h1>
+				<p id="datetime-display" class="datetime-text"> </p>
+			</header>
 
-		<form id="search-form" method="get" onsubmit="return handleSearch(event)">
-			<div class="search-container">
-				<div id="search-suggestion"></div>
-				<input type="text" id="search-input" placeholder="Search" name="q" autofocus autocomplete="off" />
+			<div class="search-wrapper">
+				<input type="text" id="search-input" class="search-field" placeholder="Search with Google" autofocus autocomplete="off">
 			</div>
-		</form>
 
-		<ul>
-			<li>~/personal </li>
-			<li><a href="https://gemini.google.com/">Gemini</a></li>
-			<li><a href="https://modrinth.com/dashboard">Modrinth</a></li>
-			<li><a href="https://www.ivanime.com/">Ivanime</a></li>
-			<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
-			<li><a href="https://www.virustotal.com/gui/home/upload">VirusTotal</a></li>
-		</ul>
-		<ul>
-			<li>~/dev </li>
-			<li><a href="https://overapi.com/">OverApi</a></li>
-			<li><a href="https://devdocs.io/">DevDocs</a></li>
-			<li><a href="https://w3schools.com">W3Schools</a></li>
-			<li><a href="https://explainshell.com/#">Explain Shell</a></li>
-			<li><a href="https://devhints.io/">DevHints</a></li>
-		</ul>
-		<ul>
-			<li>~/academic 拾</li>
-			<li><a href="https://conest.ciens.ucv.ve/webapp/">Conest</a></li>
-			<li><a href="https://portalasig2.ciens.ucv.ve/#/">PortalAsig2</a></li>
-			<li><a href="https://campusvirtualucv.org/login/index.php">Campus Virtual</a></li>
-			<li><a href="https://correo.ciens.ucv.ve">CiensMail</a></li>
-			<li><a href="https://notebooklm.google.com/">NotebookLM</a></li>
-		</ul>
-		<ul id="homelab-list">
-			<li>~/homelab </li>
--			<li><a href="https://github.com/druxorey">GitHub</a></li>
-			<li data-url="http://192.168.1.10"><a href="http://192.168.1.10">TrueNAS</a> <span class="status"></span></li>
-			<li data-url="http://192.168.1.12:9091/"><a href="http://192.168.1.12:9091/">Transmission</a> <span class="status"></span></li>
-			<li data-url="http://192.168.1.15/"><a href="http://192.168.1.15/">Aria2</a> <span class="status"></span></li>
-			<li data-url="http://192.168.1.17:8096/"><a href="http://192.168.1.17:8096/">Jellyfin</a> <span class="status"></span></li>
-		</ul>
+			<div class="bookmark-grid">
+				
+				<div class="bookmark-category">
+					<h2 class="category-title">~/personal </h2>
+					<ul class="bookmark-list">
+						<li><a href="https://gemini.google.com">Gemini</a></li>
+						<li><a href="https://modrinth.com">Modrinth</a></li>
+						<li><a href="https://ivanime.com">Ivanime</a></li>
+						<li><a href="https://myanimelist.net">MyAnimeList</a></li>
+						<li><a href="https://www.virustotal.com">VirusTotal</a></li>
+					</ul>
+				</div>
 
-	</nav>
+				<div class="bookmark-category">
+					<h2 class="category-title">~/dev </h2>
+					<ul class="bookmark-list">
+						<li><a href="https://overapi.com">OverApi</a></li>
+						<li><a href="https://devdocs.io">DevDocs</a></li>
+						<li><a href="https://www.w3schools.com">W3Schools</a></li>
+						<li><a href="https://explainshell.com">Explain Shell</a></li>
+						<li><a href="https://devhints.io">DevHints</a></li>
+					</ul>
+				</div>
 
-	<div id="image-container">
-		<div id="image-box">
-			<a href="https://druxorey.github.io/" id="image-link-box"><img id="image-display" alt="fem" src="static/images/img.webp"></a>
+				<div class="bookmark-category">
+					<h2 class="category-title">~/academic 拾</h2>
+					<ul class="bookmark-list">
+						<li><a href="https://conest.ciens.ucv.ve/webapp/">Conest</a></li>
+						<li><a href="https://portalasig2.ciens.ucv.ve/#/">PortalAsig2</a></li>
+						<li><a href="https://campusvirtualucv.org/login/index.php">Campus Virtual</a></li>
+						<li><a href="https://correo.ciens.ucv.ve">CiensMail</a></li>
+						<li><a href="https://notebooklm.google.com/">NotebookLM</a></li>
+					</ul>
+				</div>
+
+				<div class="bookmark-category">
+					<h2 class="category-title">~/homelab </h2>
+					<ul class="bookmark-list">
+						<li><a href="#">Proxmox VE</a></li>
+						<li><a href="#">Grafana Metrics</a></li>
+						<li><a href="#">Docker</a></li>
+						<li><a href="#">Local Nginx</a></li>
+						<li><a href="#">Local Nginx</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="sidebar-panel">
+			<div class="image-frame">
+				<a href="https://druxorey.github.io/"><img src="/src/assets/images/img.webp" alt="Character Illustration" class="display-image"></a>
+			</div>
+			
+			<div class="homelab-preview-box">
+				<p class="preview-text">Homelab Hardware Status Panel (Placeholder Area)</p>
+			</div>
+		</section>
+
+	</main>
+
+	<dialog id="settings-modal" class="config-modal">
+		<div class="modal-content">
+			<header class="modal-header">
+				<h2 class="modal-title">Preferences Configuration</h2>
+				<button id="settings-close" class="close-btn" aria-label="Close Settings">&times;</button>
+			</header>
+			<hr class="modal-divider">
+			<form class="config-form" method="dialog">
+				<div class="form-group">
+					<label for="dark-theme-select">Preferred Dark Theme</label>
+					<select id="dark-theme-select" class="form-select">
+						<option value="dracula">Dracula</option>
+						<option value="catppuccin-mocha">Catppuccin Mocha</option>
+						<option value="gruvbox-dark">Gruvbox Dark</option>
+						<option value="nord-dark">Nord Dark</option>
+						<option value="evergreen-dark">Evergreen Dark</option>
+						<option value="tokyonight-dark">Tokyo Night Dark</option>
+						<option value="onedark">One Dark</option>
+						<option value="rosepine-dark">Rosé Pine Dark</option>
+						<option value="ayu-dark">Ayu Dark</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="light-theme-select">Preferred Light Theme</label>
+					<select id="light-theme-select" class="form-select">
+						<option value="alucard">Alucard</option>
+						<option value="catppuccin-latte">Catppuccin Latte</option>
+						<option value="gruvbox-light">Gruvbox Light</option>
+						<option value="nord-light">Nord Light</option>
+						<option value="evergreen-light">Evergreen Light</option>
+						<option value="tokyonight-light">Tokyo Night Light</option>
+						<option value="onelight">One Light</option>
+						<option value="rosepine-light">Rosé Pine Dawn</option>
+						<option value="ayu-light">Ayu Light</option>
+					</select>
+				</div>
+			</form>
 		</div>
-		<div id="icons-box">
-			<a href="https://calendar.google.com/calendar/u/0/r" class="svg-container">
-				<img src="static/icons/calendar.svg" class="svg-icon" alt="Calendar Icon">
-			</a>
-			<a href="https://drive.proton.me/u/0/" class="svg-container">
-				<img src="static/icons/proton-drive.svg" class="svg-icon" alt="Tasks Icon">
-			</a>
-			<a href="https://drive.google.com/drive/my-drive" class="svg-container">
-				<img src="static/icons/google-drive.svg" class="svg-icon" alt="Drive Icon">
-			</a>
-			<a href="https://www.notion.so/" class="svg-container">
-				<img src="static/icons/notion.svg" class="svg-icon" alt="Notion Icon">
-			</a>
-		</div>
-	</div>
+	</dialog>
 
-	<script type="text/javascript" src="scripts/get_date.js"></script>
-	<script type="text/javascript" src="scripts/get_search.js"></script>
-	<script type="text/javascript" src="scripts/get_local_services.js"></script>
-	<script type="text/javascript" src="scripts/set_colorscheme.js"></script>
-	<script type="text/javascript" src="scripts/set_settings.js"></script>
-
+	<script type="module" src="/src/ts/main.ts"></script>
 </body>
-
 </html>
