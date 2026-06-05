@@ -1,0 +1,212 @@
+[data-theme="dracula"] {
+	--drx-color-base: #191A21 !important;
+	--drx-color-surface: #21222C !important;
+	--drx-color-overlay: #343746 !important;
+	--drx-color-highlight: #44475A !important;
+	--drx-color-text: #F8F8F2 !important;
+	--drx-color-subtext: #BABCC9 !important;
+	--drx-color-deactivate: #707487 !important;
+	--drx-color-comment: #6272A4 !important;
+	--drx-color-accent: #BD93F9 !important;
+}
+
+[data-theme="alucard"] {
+	--drx-color-base: #EDE9DA !important;
+	--drx-color-surface: #FFFBEB !important;
+	--drx-color-overlay: #DEDBCC !important;
+	--drx-color-highlight: #CECCC0 !important;
+	--drx-color-text: #1F1F1F !important;
+	--drx-color-subtext: #6C664B !important;
+	--drx-color-deactivate: #BCBAB3 !important;
+	--drx-color-comment: #6C664B !important;
+	--drx-color-accent: #CB3A2A !important;
+}
+
+[data-theme="gruvbox-dark"] {
+	--drx-color-base: #282828 !important;
+	--drx-color-surface: #3c3836 !important;
+	--drx-color-overlay: #504945 !important;
+	--drx-color-highlight: #665c54 !important;
+	--drx-color-text: #ebdbb2 !important;
+	--drx-color-subtext: #d5c4a1 !important;
+	--drx-color-deactivate: #928374 !important;
+	--drx-color-comment: #a89984 !important;
+	--drx-color-accent: #fe8019 !important;
+}
+
+[data-theme="gruvbox-light"] {
+	--drx-color-base: #fbf1c7 !important;
+	--drx-color-surface: #f2e5bc !important;
+	--drx-color-overlay: #ebdbb2 !important;
+	--drx-color-highlight: #d5c4a1 !important;
+	--drx-color-text: #282828 !important;
+	--drx-color-subtext: #3c3836 !important;
+	--drx-color-deactivate: #7c6f64 !important;
+	--drx-color-comment: #928374 !important;
+	--drx-color-accent: #af3a03 !important;
+}
+
+[data-theme="catppuccin-mocha"] {
+	--drx-color-base: #1e1e2e !important;
+	--drx-color-surface: #181825 !important;
+	--drx-color-overlay: #313244 !important;
+	--drx-color-highlight: #45475A !important;
+	--drx-color-text: #cdd6f4 !important;
+	--drx-color-subtext: #a6adc8 !important;
+	--drx-color-deactivate: #6c7086 !important;
+	--drx-color-comment: #bac2de !important;
+	--drx-color-accent: #cba6f7 !important;
+}
+
+[data-theme="catppuccin-latte"] {
+	--drx-color-base: #eff1f5 !important;
+	--drx-color-surface: #e6e9ef !important;
+	--drx-color-overlay: #ccd0da !important;
+	--drx-color-highlight: #bcc0cc !important;
+	--drx-color-text: #4c4f69 !important;
+	--drx-color-subtext: #5c5f77 !important;
+	--drx-color-deactivate: #9ca0b0 !important;
+	--drx-color-comment: #7c7f93 !important;
+	--drx-color-accent: #8839ef !important;
+}
+
+[data-theme="nord-dark"] {
+	--drx-color-base: #2e3440 !important;
+	--drx-color-surface: #3b4252 !important;
+	--drx-color-overlay: #434c5e !important;
+	--drx-color-highlight: #4c566a !important;
+	--drx-color-text: #eceff4 !important;
+	--drx-color-subtext: #d8dee9 !important;
+	--drx-color-deactivate: #616e88 !important;
+	--drx-color-comment: #4c566a !important;
+	--drx-color-accent: #88c0d0 !important;
+}
+[data-theme="nord-light"] {
+	--drx-color-base: #eceff4 !important;
+	--drx-color-surface: #e5e9f0 !important;
+	--drx-color-overlay: #d8dee9 !important;
+	--drx-color-highlight: #c8cedc !important;
+	--drx-color-text: #2e3440 !important;
+	--drx-color-subtext: #3b4252 !important;
+	--drx-color-deactivate: #4c566a !important;
+	--drx-color-comment: #4c566a !important;
+	--drx-color-accent: #5e81ac !important;
+}
+
+[data-theme="evergreen-dark"] {
+	--drx-color-base: #0d1f1a !important;
+	--drx-color-surface: #142e27 !important;
+	--drx-color-overlay: #1b3d33 !important;
+	--drx-color-highlight: #234d40 !important;
+	--drx-color-text: #e1efe6 !important;
+	--drx-color-subtext: #b2cfbb !important;
+	--drx-color-deactivate: #638570 !important;
+	--drx-color-comment: #4b6a56 !important;
+	--drx-color-accent: #a3cfb1 !important;
+}
+
+[data-theme="evergreen-light"] {
+	--drx-color-base: #f4f9f5 !important;
+	--drx-color-surface: #e3efe6 !important;
+	--drx-color-overlay: #d2e4d7 !important;
+	--drx-color-highlight: #c1dac8 !important;
+	--drx-color-text: #0d1f1a !important;
+	--drx-color-subtext: #142e27 !important;
+	--drx-color-deactivate: #4b6a56 !important;
+	--drx-color-comment: #638570 !important;
+	--drx-color-accent: #2d6a4f !important;
+}
+
+[data-theme="tokyonight-dark"] {
+	--drx-color-base: #1a1b26 !important;
+	--drx-color-surface: #1f2335 !important;
+	--drx-color-overlay: #24283b !important;
+	--drx-color-highlight: #383e5a !important;
+	--drx-color-text: #a9b1d6 !important;
+	--drx-color-subtext: #787c99 !important;
+	--drx-color-deactivate: #565f89 !important;
+	--drx-color-comment: #565f89 !important;
+	--drx-color-accent: #7aa2f7 !important;
+}
+[data-theme="tokyonight-light"] {
+	--drx-color-base: #f5f6f9 !important;
+	--drx-color-surface: #e1e2e7 !important;
+	--drx-color-overlay: #d5d6db !important;
+	--drx-color-highlight: #b4b5b9 !important;
+	--drx-color-text: #343b58 !important;
+	--drx-color-subtext: #565a6f !important;
+	--drx-color-deactivate: #8c90a3 !important;
+	--drx-color-comment: #989ca0 !important;
+	--drx-color-accent: #3891d1 !important;
+}
+
+[data-theme="onedark"] {
+	--drx-color-base: #282c34 !important;
+	--drx-color-surface: #21252b !important;
+	--drx-color-overlay: #2c313c !important;
+	--drx-color-highlight: #3e4452 !important;
+	--drx-color-text: #abb2bf !important;
+	--drx-color-subtext: #828997 !important;
+	--drx-color-deactivate: #5c6370 !important;
+	--drx-color-comment: #5c6370 !important;
+	--drx-color-accent: #61afef !important;
+}
+
+[data-theme="onelight"] {
+	--drx-color-base: #fafafa !important;
+	--drx-color-surface: #f0f0f0 !important;
+	--drx-color-overlay: #eaeaea !important;
+	--drx-color-highlight: #d0d0d0 !important;
+	--drx-color-text: #383a42 !important;
+	--drx-color-subtext: #696c77 !important;
+	--drx-color-deactivate: #a0a1a7 !important;
+	--drx-color-comment: #a0a1a7 !important;
+	--drx-color-accent: #4078f2 !important;
+}
+
+[data-theme="rosepine-dark"] {
+	--drx-color-base: #191724 !important;
+	--drx-color-surface: #1f1d2e !important;
+	--drx-color-overlay: #26233a !important;
+	--drx-color-highlight: #403d52 !important;
+	--drx-color-text: #e0def4 !important;
+	--drx-color-subtext: #908caa !important;
+	--drx-color-deactivate: #6e6a86 !important;
+	--drx-color-comment: #908caa !important;
+	--drx-color-accent: #ebbcba !important;
+}
+[data-theme="rosepine-light"] {
+	--drx-color-base: #faf4ed !important;
+	--drx-color-surface: #f2e9e1 !important;
+	--drx-color-overlay: #eaf0f3 !important;
+	--drx-color-highlight: #dfdad9 !important;
+	--drx-color-text: #575279 !important;
+	--drx-color-subtext: #797593 !important;
+	--drx-color-deactivate: #9893a5 !important;
+	--drx-color-comment: #797593 !important;
+	--drx-color-accent: #b4637a !important;
+}
+
+[data-theme="ayu-dark"] {
+	--drx-color-base: #0f1419 !important;
+	--drx-color-surface: #14191f !important;
+	--drx-color-overlay: #1a202c !important;
+	--drx-color-highlight: #232a36 !important;
+	--drx-color-text: #e6b450 !important;
+	--drx-color-subtext: #baa47a !important;
+	--drx-color-deactivate: #5c6773 !important;
+	--drx-color-comment: #5c6773 !important;
+	--drx-color-accent: #ffb454 !important;
+}
+
+[data-theme="ayu-light"] {
+	--drx-color-base: #f8f9fa !important;
+	--drx-color-surface: #f3f4f5 !important;
+	--drx-color-overlay: #e9ecef !important;
+	--drx-color-highlight: #dee2e6 !important;
+	--drx-color-text: #24292e !important;
+	--drx-color-subtext: #586069 !important;
+	--drx-color-deactivate: #959da5 !important;
+	--drx-color-comment: #6a737d !important;
+	--drx-color-accent: #f08a24 !important;
+}
