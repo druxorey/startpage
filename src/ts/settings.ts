@@ -1,4 +1,5 @@
 import { getThemeSettings, saveThemeSettings, ThemeSettings } from './themes';
+import { getSavedSearchEngine } from './search';
 
 export function initSettings(): void {
 	const modal = document.getElementById('settings-modal') as HTMLDialogElement | null;
@@ -6,12 +7,15 @@ export function initSettings(): void {
 	const closeBtn = document.getElementById('settings-close');
 	const lightSelect = document.getElementById('light-theme-select') as HTMLSelectElement | null;
 	const darkSelect = document.getElementById('dark-theme-select') as HTMLSelectElement | null;
+	const engineSelect = document.getElementById('search-engine-select') as HTMLSelectElement | null;
 
-	if (!modal || !toggleBtn || !closeBtn || !lightSelect || !darkSelect) return;
+	if (!modal || !toggleBtn || !closeBtn || !lightSelect || !darkSelect || !engineSelect) return;
 
 	const currentPreferences = getThemeSettings();
+
 	lightSelect.value = currentPreferences.preferredLight;
 	darkSelect.value = currentPreferences.preferredDark;
+	engineSelect.value = getSavedSearchEngine();
 
 	toggleBtn.addEventListener('click', () => modal.showModal());
 	closeBtn.addEventListener('click', () => modal.close());
@@ -37,4 +41,8 @@ export function initSettings(): void {
 
 	lightSelect.addEventListener('change', syncPreferences);
 	darkSelect.addEventListener('change', syncPreferences);
+	
+	engineSelect.addEventListener('change', () => {
+		localStorage.setItem('selectedSearchEngine', engineSelect.value);
+	});
 }

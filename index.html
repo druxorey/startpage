@@ -16,6 +16,14 @@
 		</svg>
 	</button>
 
+	<button id="help-toggle" class="help-btn" aria-label="Open Help Guide">
+		<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<circle cx="12" cy="12" r="10"></circle>
+			<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+			<line x1="12" y1="17" x2="12.01" y2="17"></line>
+		</svg>
+	</button>
+
 	<main class="dashboard-container">
 		
 		<section class="content-card">
@@ -25,7 +33,11 @@
 			</header>
 
 			<div class="search-wrapper">
-				<input type="text" id="search-input" class="search-field" placeholder="Search with Google" autofocus autocomplete="off">
+				<div class="search-input-container">
+					<input type="text" id="search-input" class="search-field" placeholder="Search with Google" autofocus autocomplete="off">
+					<div id="search-ghost" class="search-ghost"></div>
+				</div>
+				<div id="search-suggestions" class="suggestions-overlay"></div>
 			</div>
 
 			<div class="bookmark-grid">
@@ -98,6 +110,14 @@
 			<hr class="modal-divider">
 			<form class="config-form" method="dialog">
 				<div class="form-group">
+					<label for="search-engine-select">Default Web Search Engine</label>
+					<select id="search-engine-select" class="form-select">
+						<option value="https://google.com/search?q=">Google</option>
+						<option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+						<option value="https://search.brave.com/search?q=">Brave Search</option>
+					</select>
+				</div>
+				<div class="form-group">
 					<label for="dark-theme-select">Preferred Dark Theme</label>
 					<select id="dark-theme-select" class="form-select">
 						<option value="dracula">Dracula</option>
@@ -127,6 +147,36 @@
 					</select>
 				</div>
 			</form>
+		</div>
+	</dialog>
+
+	<dialog id="help-modal" class="config-modal">
+		<div class="modal-content">
+			<header class="modal-header">
+				<h2 class="modal-title">Commands & Shortcuts</h2>
+				<button id="help-close" class="close-btn" aria-label="Close Help Guide">&times;</button>
+			</header>
+			<hr class="modal-divider">
+			<div class="help-body">
+				<h3 class="help-section-title">Search Prefixes</h3>
+				<ul class="help-guide-list">
+					<li><span class="help-key">s/</span> Default Web Search</li>
+					<li><span class="help-key">a/</span> Arch Wiki Search</li>
+					<li><span class="help-key">g/</span> GitHub Repository Search</li>
+					<li><span class="help-key">y/</span> YouTube Video Search</li>
+					<li><span class="help-key">r/</span> Reddit Subreddit Search</li>
+					<li><span class="help-key">i/</span> Google Images Search</li>
+				</ul>
+
+				<h3 class="help-section-title">Keyboard Shortcuts</h3>
+				<ul class="help-guide-list">
+					<li><span class="help-key">Space</span> Focus Search Bar</li>
+					<li><span class="help-key">Ctrl + C</span> Clear Input Bar</li>
+					<li><span class="help-key">Up / Down</span> Navigate Suggestions Dropdown</li>
+					<li><span class="help-key">Enter</span> Confirm Selection / Search</li>
+					<li><span class="help-key">Esc</span> Close Active Menus / Modals</li>
+				</ul>
+			</div>
 		</div>
 	</dialog>
 

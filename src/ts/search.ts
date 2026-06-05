@@ -1,12 +1,14 @@
-interface ShortcutMap {
-	[key: string]: string;
+interface ShortcutItem {
+	name: string;
+	url: string;
 }
 
-let shortcuts: ShortcutMap = {};
-let currentMatch: string | null = null;
+let shortcutsList: ShortcutItem[] = [];
+let currentFilteredSuggestions: ShortcutItem[] = [];
+let activeSuggestionIndex: number = -1;
 
 const SEARCH_PREFIXES: Record<string, string> = {
-	's/': 'https://google.com/search?q=',
+	's/': '',
 	'r/': 'https://www.reddit.com/search/?q=',
 	'g/': 'https://www.github.com/search/?q=',
 	'y/': 'https://www.youtube.com/search/?q=',
@@ -14,92 +16,145 @@ const SEARCH_PREFIXES: Record<string, string> = {
 	'a/': 'https://wiki.archlinux.org/index.php?search='
 };
 
+export function getSavedSearchEngine(): string {
+	return localStorage.getItem('selectedSearchEngine') || 'https://google.com/search?q=';
+}
+
 export async function loadShortcuts(): Promise<void> {
-	const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/config/brave/bookmarks.yaml';
+	const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/local/share/brave/bookmarks.yaml';
 	try {
 		const response = await fetch(yamlUrl);
 		if (!response.ok) throw new Error('Failed to retrieve remote shortcuts yaml file');
 		const yamlText = await response.text();
 
-		const shortcutsArray = yamlText
-			.split('\n')
-			.filter(line => line.trim() && !line.startsWith('#'))
-			.reduce<{ name?: string; url?: string }[]>((acc, line) => {
-				const match = line.match(/^\s*-\s*name:\s*(.+)|^\s*url:\s*(.+)/);
-				if (match) {
-					if (match[1]) acc.push({ name: match[1].trim() });
-					if (match[2] && acc.length > 0) acc[acc.length - 1].url = match[2].trim();
-				}
-				return acc;
-			}, []);
+		const lines = yamlText.split('\n');
+		shortcutsList = [];
+		let currentName = '';
 
-		shortcuts = shortcutsArray.reduce<ShortcutMap>((acc, item) => {
-			if (item.name && item.url) {
-				acc[item.name.toLowerCase()] = item.url;
+		for (const line of lines) {
+			const trimmed = line.trim();
+			if (!trimmed || trimmed.startsWith('#')) continue;
+
+			if (trimmed.startsWith('- name:')) {
+				currentName = trimmed.replace('- name:', '').trim();
+			} else if (trimmed.startsWith('url:')) {
+				const currentUrl = trimmed.replace('url:', '').trim();
+				if (currentName && currentUrl) {
+					shortcutsList.push({ name: currentName, url: currentUrl });
+				}
 			}
-			return acc;
-		}, {});
+		}
 	} catch (error) {
 		console.error('Error processing shortcuts configuration:', error);
-		shortcuts = {};
+		shortcutsList = [];
 	}
 }
 
-function findBestMatch(query: string): string | null {
-	if (!query || Object.keys(shortcuts).length === 0) return null;
-	const names = Object.keys(shortcuts);
+export function updateSearchSuggestions(inputVal: string): void {
+	const query = inputVal.toLowerCase().trim();
+	const ghostElement = document.getElementById('search-ghost');
+	const suggestionsElement = document.getElementById('search-suggestions');
 
-	const startMatch = names.find(name => name.startsWith(query));
-	if (startMatch) return startMatch;
+	if (!ghostElement || !suggestionsElement) return;
 
-	const wordMatch = names.find(name => name.split(' ').some(word => word.startsWith(query)));
-	return wordMatch || null;
+	const hasPrefix = Object.keys(SEARCH_PREFIXES).some(prefix => inputVal.toLowerCase().startsWith(prefix));
+
+	if (!query || hasPrefix) {
+		ghostElement.textContent = '';
+		suggestionsElement.style.display = 'none';
+		currentFilteredSuggestions = [];
+		activeSuggestionIndex = -1;
+		return;
+	}
+
+	currentFilteredSuggestions = shortcutsList
+		.filter(item => item.name.toLowerCase().includes(query))
+		.slice(0, 5);
+
+	if (currentFilteredSuggestions.length > 0) {
+		suggestionsElement.style.display = 'block';
+		suggestionsElement.innerHTML = '';
+
+		currentFilteredSuggestions.forEach((item, index) => {
+			const div = document.createElement('div');
+			div.className = 'suggestion-item';
+			if (index === activeSuggestionIndex) div.classList.add('active');
+
+			const cleanerUrl = item.url.replace(/^https?:\/\/(www\.)?/, '');
+			div.innerHTML = `<span>${item.name}</span><span class="suggestion-url">${cleanerUrl}</span>`;
+
+			div.addEventListener('click', () => {
+				window.location.href = item.url;
+			});
+			suggestionsElement.appendChild(div);
+		});
+
+		const topMatchName = currentFilteredSuggestions[0].name;
+		if (topMatchName.toLowerCase().startsWith(query)) {
+			const missingPart = topMatchName.substring(query.length);
+			ghostElement.innerHTML = `${inputVal}<span>${missingPart}</span>`;
+		} else {
+			ghostElement.textContent = '';
+		}
+	} else {
+		suggestionsElement.style.display = 'none';
+		ghostElement.textContent = '';
+		activeSuggestionIndex = -1;
+	}
 }
 
-export function highlightMatchingLinks(inputVal: string): void {
-	const query = inputVal.toLowerCase().trim();
-	const links = document.querySelectorAll<HTMLAnchorElement>('.bookmark-list li a');
+export function handleSearchKeyDown(event: KeyboardEvent, inputElement: HTMLInputElement): boolean {
+	if (currentFilteredSuggestions.length === 0) return false;
 
-	links.forEach(link => {
-		const linkText = link.textContent?.toLowerCase() || '';
-		if (query !== '' && !linkText.includes(query)) {
-			link.style.color = 'var(--drx-color-deactivate)';
-		} else {
-			link.style.color = '';
-		}
-	});
+	if (event.key === 'ArrowDown') {
+		event.preventDefault();
+		activeSuggestionIndex = (activeSuggestionIndex + 1) % currentFilteredSuggestions.length;
+		updateSearchSuggestions(inputElement.value);
+		return true;
+	}
 
-	currentMatch = findBestMatch(query);
+	if (event.key === 'ArrowUp') {
+		event.preventDefault();
+		activeSuggestionIndex = (activeSuggestionIndex - 1 + currentFilteredSuggestions.length) % currentFilteredSuggestions.length;
+		updateSearchSuggestions(inputElement.value);
+		return true;
+	}
+
+	return false;
 }
 
 export function handleSearch(query: string): void {
 	const trimmedQuery = query.trim();
 	if (!trimmedQuery) return;
 
-	const matchedPrefix = Object.keys(SEARCH_PREFIXES).find(p => trimmedQuery.toLowerCase().startsWith(p));
-	
+	const lowerQuery = trimmedQuery.toLowerCase();
+
+	const matchedPrefix = Object.keys(SEARCH_PREFIXES).find(p => lowerQuery.startsWith(p));
 	if (matchedPrefix) {
 		const searchQuery = trimmedQuery.substring(matchedPrefix.length);
-		window.location.href = `${SEARCH_PREFIXES[matchedPrefix]}${encodeURIComponent(searchQuery)}`;
+		if (matchedPrefix === 's/') {
+			window.location.href = `${getSavedSearchEngine()}${encodeURIComponent(searchQuery)}`;
+		} else {
+			window.location.href = `${SEARCH_PREFIXES[matchedPrefix]}${encodeURIComponent(searchQuery)}`;
+		}
 		return;
 	}
 
-	const lowerQuery = trimmedQuery.toLowerCase();
-	if (shortcuts[lowerQuery]) {
-		window.location.href = shortcuts[lowerQuery];
+	if (activeSuggestionIndex >= 0 && activeSuggestionIndex < currentFilteredSuggestions.length) {
+		window.location.href = currentFilteredSuggestions[activeSuggestionIndex].url;
 		return;
 	}
 
-	if (currentMatch && shortcuts[currentMatch]) {
-		window.location.href = shortcuts[currentMatch];
+	if (currentFilteredSuggestions.length > 0) {
+		window.location.href = currentFilteredSuggestions[0].url;
 		return;
 	}
 
-	window.location.href = `${SEARCH_PREFIXES['s/']}${encodeURIComponent(trimmedQuery)}`;
+	window.location.href = `${getSavedSearchEngine()}${encodeURIComponent(trimmedQuery)}`;
 }
 
 export function clearSearchInput(inputElement: HTMLInputElement): void {
 	inputElement.value = '';
 	inputElement.focus();
-	highlightMatchingLinks('');
+	updateSearchSuggestions('');
 }
