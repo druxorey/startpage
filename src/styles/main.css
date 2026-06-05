@@ -9,12 +9,23 @@
 }
 
 :root {
-	--font-main: 'Hack', monospace;
-	--radius-lg: 12px;
-	--radius-md: 8px;
-	--transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	--drx-color-base: #191A21;
+	--drx-color-surface: #21222C;
+	--drx-color-overlay: #343746;
+	--drx-color-highlight: #44475A;
+	--drx-color-text: #F8F8F2;
+	--drx-color-subtext: #BABCC9;
+	--drx-color-deactivate: #707487;
+	--drx-color-comment: #6272A4;
+	--drx-color-accent: #BD93F9;
+
+	--drx-font-main: 'Hack', monospace;
+	--drx-radius-lg: 16px;
+	--drx-radius-md: 8px;
+	--drx-bar-height: 52px;
+	--drx-border-width: 2px;
 	
-	--bar-height: 52px;
+	--drx-transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 	--drx-color-shadow: color-mix(in srgb, #000000 40%, transparent);
 }
 
@@ -27,20 +38,20 @@
 body {
 	background-color: var(--drx-color-base);
 	color: var(--drx-color-text);
-	font-family: var(--font-main);
+	font-family: var(--drx-font-main);
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 2rem;
 	overflow-x: hidden;
-	transition: var(--transition-smooth);
+	transition: var(--drx-transition-smooth);
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
-	transition: var(--transition-smooth);
+	transition: var(--drx-transition-smooth);
 }
 
 ul {
