@@ -5,7 +5,7 @@
 	gap: 2rem;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 10px 30px var(--drx-color-shadow);
 	
 	border: 1px solid transparent;
 	border-top: 1px solid transparent;
@@ -90,7 +90,7 @@
 	background-color: var(--drx-color-surface);
 	border: 1px solid var(--drx-color-highlight);
 	border-radius: var(--radius-md);
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 12px 40px var(--drx-color-shadow);
 	z-index: 1000;
 	display: none;
 	overflow: hidden;
@@ -183,7 +183,7 @@
 	flex-grow: 1;
 	border-radius: var(--radius-lg);
 	overflow: hidden;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 10px 30px var(--drx-color-shadow);
 	cursor: pointer;
 }
 
@@ -202,7 +202,7 @@
 .image-overlay {
 	position: absolute;
 	inset: 0;
-	background: rgba(25, 26, 33, 0.5);
+	background: var(--drx-color-shadow);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -233,7 +233,7 @@
 	justify-content: center;
 	padding: 0 1rem;
 	border: 1px dashed var(--drx-color-highlight);
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 15px var(--drx-color-shadow);
 }
 
 .preview-text {
@@ -269,13 +269,13 @@
 	color: var(--drx-color-text);
 	margin: auto;
 	padding: 2rem;
-	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 20px 50px var(--drx-color-shadow);
 	max-width: 400px;
 	width: 90%;
 }
 
 .config-modal::backdrop {
-	background: rgba(0, 0, 0, 0.6);
+	background: var(--drx-color-shadow);
 	backdrop-filter: blur(4px);
 }
 
@@ -409,7 +409,7 @@
 	min-width: 8rem;
 	text-align: center;
 	display: inline-block;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2px 4px var(--drx-color-shadow);
 }
 
 dialog.config-modal[open] {
@@ -435,11 +435,11 @@ dialog.config-modal[open]::backdrop {
 	from {
 		opacity: 0;
 		backdrop-filter: blur(0px);
-		background: rgba(0, 0, 0, 0);
+		background: var(--drx-color-shadow);
 	}
 	to {
 		opacity: 1;
 		backdrop-filter: blur(4px);
-		background: rgba(0, 0, 0, 0.6);
+		background: var(--drx-color-shadow);
 	}
 }
