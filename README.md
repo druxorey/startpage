@@ -1,6 +1,15 @@
 <h1 align="center">Startpage</h1>
 
-<p align="center">A minimalist startpage designed for quick access to your favorite websites</p>
+<div align="center">
+
+_A startpage designed for quick access to your favorite websites_
+
+[![stars](https://img.shields.io/github/stars/druxorey/startpage?color=8BE9FD&labelColor=191A21&style=for-the-badge)](https://github.com/druxorey/startpage/stargazers)
+[![size](https://img.shields.io/github/repo-size/druxorey/startpage?label=Size&color=50FA7B&labelColor=191A21&style=for-the-badge)](https://github.com/druxorey/startpage)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdruxorey%2Fstartpage&label=Views&labelColor=%23191A21&countColor=%23FFB86C)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdruxorey%2Fstartpage)
+[![license](https://img.shields.io/github/license/druxorey/startpage?color=FF5555&labelColor=191A21&style=for-the-badge)](https://github.com/druxorey/startpage/blob/main/LICENSE)
+
+</div>
 
 ![Startpage Screenshot](/resources/startpage-2024-10-08.gif)
 
