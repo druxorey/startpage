@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Startpage</title>
 	<link rel="icon" href="./assets/icon-BmIY5DC5.svg" type="image/x-icon" />
-  <script type="module" crossorigin src="./assets/index-DYO6sh8u.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-C561_4mD.css">
+  <script type="module" crossorigin src="./assets/index-DO1OtCit.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Ct9h8Ecq.css">
 </head>
 <body>
 
@@ -35,6 +35,10 @@
 
 			<div class="search-wrapper">
 				<div class="search-input-container">
+					<svg class="search-field-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="11" cy="11" r="8"></circle>
+						<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+					</svg>
 					<input type="text" id="search-input" class="search-field" placeholder="Search with Google" autofocus autocomplete="off">
 					<div id="search-ghost" class="search-ghost"></div>
 				</div>
@@ -96,7 +100,7 @@
 			</div>
 			
 			<div class="homelab-preview-box">
-				<p class="preview-text">Homelab Hardware Status Panel (Placeholder Area)</p>
+				<p class="preview-text">Homelab Status Panel</p>
 			</div>
 		</section>
 
@@ -111,15 +115,16 @@
 			<hr class="modal-divider">
 			<form class="config-form" method="dialog">
 				<div class="form-group">
-					<label for="search-engine-select">Default Web Search Engine</label>
+					<label>Default Web Search Engine</label>
 					<select id="search-engine-select" class="form-select">
 						<option value="https://google.com/search?q=">Google</option>
 						<option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
 						<option value="https://search.brave.com/search?q=">Brave Search</option>
 					</select>
 				</div>
+
 				<div class="form-group">
-					<label for="dark-theme-select">Preferred Dark Theme</label>
+					<label>Preferred Dark Theme</label>
 					<select id="dark-theme-select" class="form-select">
 						<option value="dracula">Dracula</option>
 						<option value="catppuccin-mocha">Catppuccin Mocha</option>
@@ -134,7 +139,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="light-theme-select">Preferred Light Theme</label>
+					<label>Preferred Light Theme</label>
 					<select id="light-theme-select" class="form-select">
 						<option value="alucard">Alucard</option>
 						<option value="catppuccin-latte">Catppuccin Latte</option>
