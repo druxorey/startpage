@@ -16,8 +16,28 @@ const SEARCH_PREFIXES: Record<string, string> = {
 	'a/': 'https://wiki.archlinux.org/index.php?search='
 };
 
+const PREFIX_DESCRIPTIONS: Record<string, string> = {
+	's/': 'Default Web Search',
+	'r/': 'Reddit',
+	'g/': 'GitHub',
+	'y/': 'YouTube',
+	'i/': 'Google Images',
+	'a/': 'Arch Wiki'
+};
+
 export function getSavedSearchEngine(): string {
 	return localStorage.getItem('selectedSearchEngine') || 'https://google.com/search?q=';
+}
+
+function applyDefaultPlaceholder(inputElement: HTMLInputElement): void {
+	const engineUrl = getSavedSearchEngine();
+	let engineName = 'Google';
+	if (engineUrl.includes('duckduckgo.com')) {
+		engineName = 'DuckDuckGo';
+	} else if (engineUrl.includes('search.brave.com')) {
+		engineName = 'Brave Search';
+	}
+	inputElement.placeholder = `Search with ${engineName}`;
 }
 
 export function initSearchEngine(): void {
@@ -26,26 +46,19 @@ export function initSearchEngine(): void {
 
 	if (!inputElement) return;
 
-	const updatePlaceholder = (engineUrl: string) => {
-		let engineName = 'Google';
-		if (engineUrl.includes('duckduckgo.com')) {
-			engineName = 'DuckDuckGo';
-		} else if (engineUrl.includes('search.brave.com')) {
-			engineName = 'Brave Search';
-		}
-		inputElement.placeholder = `Search with ${engineName}`;
-	};
-
 	const savedEngine = getSavedSearchEngine();
 	if (selectElement) {
 		selectElement.value = savedEngine;
 	}
-	updatePlaceholder(savedEngine);
+	
+	applyDefaultPlaceholder(inputElement);
 
 	if (selectElement) {
 		selectElement.addEventListener('change', () => {
 			localStorage.setItem('selectedSearchEngine', selectElement.value);
-			updatePlaceholder(selectElement.value);
+			if (!inputElement.classList.contains('has-prefix')) {
+				applyDefaultPlaceholder(inputElement);
+			}
 		});
 	}
 }
@@ -90,12 +103,37 @@ export function updateSearchSuggestions(inputVal: string): void {
 	const query = inputVal.toLowerCase().trim();
 	const ghostElement = document.getElementById('search-ghost');
 	const suggestionsElement = document.getElementById('search-suggestions');
+	const inputElement = document.getElementById('search-input') as HTMLInputElement | null;
 
 	if (!ghostElement || !suggestionsElement) return;
 
-	const hasPrefix = Object.keys(SEARCH_PREFIXES).some(prefix => inputVal.toLowerCase().startsWith(prefix));
+	const matchedPrefix = Object.keys(SEARCH_PREFIXES).find(prefix => inputVal.toLowerCase().startsWith(prefix));
 
-	if (!query || hasPrefix) {
+	if (inputElement) {
+		if (matchedPrefix) {
+			inputElement.classList.add('has-prefix');
+			inputElement.placeholder = `Search ${PREFIX_DESCRIPTIONS[matchedPrefix]}...`;
+		} else {
+			inputElement.classList.remove('has-prefix');
+			applyDefaultPlaceholder(inputElement);
+		}
+	}
+
+	// FEATURE NUEVA: Si hay un prefijo activo, transformamos el contenedor en un pop-up informativo verde
+	if (matchedPrefix) {
+		ghostElement.textContent = '';
+		currentFilteredSuggestions = [];
+		activeSuggestionIndex = -1;
+		
+		suggestionsElement.classList.add('prefix-mode');
+		suggestionsElement.style.display = 'block';
+		suggestionsElement.innerHTML = `<div class="prefix-indicator">Searching in <strong>${PREFIX_DESCRIPTIONS[matchedPrefix]}</strong>...</div>`;
+		return;
+	} else {
+		suggestionsElement.classList.remove('prefix-mode');
+	}
+
+	if (!query) {
 		ghostElement.textContent = '';
 		suggestionsElement.style.display = 'none';
 		currentFilteredSuggestions = [];

@@ -18,6 +18,7 @@
 	--drx-color-deactivate: #707487;
 	--drx-color-comment: #6272A4;
 	--drx-color-accent: #BD93F9;
+	--drx-color-focus: #FF79C6;
 
 	--drx-font-main: 'Hack', monospace;
 	--drx-motion-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);

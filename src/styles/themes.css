@@ -8,6 +8,7 @@
 	--drx-color-deactivate: #707487 !important;
 	--drx-color-comment: #6272A4 !important;
 	--drx-color-accent: #BD93F9 !important;
+	--drx-color-focus: #FF79C6 !important;
 }
 
 [data-theme="alucard"] {
@@ -20,6 +21,7 @@
 	--drx-color-deactivate: #BCBAB3 !important;
 	--drx-color-comment: #6C664B !important;
 	--drx-color-accent: #CB3A2A !important;
+	--drx-color-focus: #036A96 !important;
 }
 
 [data-theme="gruvbox-dark"] {
@@ -32,6 +34,7 @@
 	--drx-color-deactivate: #928374 !important;
 	--drx-color-comment: #a89984 !important;
 	--drx-color-accent: #fe8019 !important;
+	--drx-color-focus: #fabd2f !important;
 }
 
 [data-theme="gruvbox-light"] {
@@ -44,6 +47,7 @@
 	--drx-color-deactivate: #7c6f64 !important;
 	--drx-color-comment: #928374 !important;
 	--drx-color-accent: #af3a03 !important;
+	--drx-color-focus: #b57614 !important;
 }
 
 [data-theme="catppuccin-mocha"] {
@@ -56,6 +60,7 @@
 	--drx-color-deactivate: #6c7086 !important;
 	--drx-color-comment: #bac2de !important;
 	--drx-color-accent: #cba6f7 !important;
+	--drx-color-focus: #f5c2e7 !important;
 }
 
 [data-theme="catppuccin-latte"] {
@@ -68,6 +73,7 @@
 	--drx-color-deactivate: #9ca0b0 !important;
 	--drx-color-comment: #7c7f93 !important;
 	--drx-color-accent: #8839ef !important;
+	--drx-color-focus: #ea76cb !important;
 }
 
 [data-theme="nord-dark"] {
@@ -80,6 +86,7 @@
 	--drx-color-deactivate: #616e88 !important;
 	--drx-color-comment: #4c566a !important;
 	--drx-color-accent: #88c0d0 !important;
+	--drx-color-focus: #ebcb8b !important;
 }
 [data-theme="nord-light"] {
 	--drx-color-base: #eceff4 !important;
@@ -91,6 +98,7 @@
 	--drx-color-deactivate: #4c566a !important;
 	--drx-color-comment: #4c566a !important;
 	--drx-color-accent: #5e81ac !important;
+	--drx-color-focus: #d08770 !important;
 }
 
 [data-theme="evergreen-dark"] {
@@ -103,6 +111,7 @@
 	--drx-color-deactivate: #638570 !important;
 	--drx-color-comment: #4b6a56 !important;
 	--drx-color-accent: #a3cfb1 !important;
+	--drx-color-focus: #88b388 !important;
 }
 
 [data-theme="evergreen-light"] {
@@ -115,6 +124,7 @@
 	--drx-color-deactivate: #4b6a56 !important;
 	--drx-color-comment: #638570 !important;
 	--drx-color-accent: #2d6a4f !important;
+	--drx-color-focus: #004445 !important;
 }
 
 [data-theme="tokyonight-dark"] {
@@ -127,6 +137,7 @@
 	--drx-color-deactivate: #565f89 !important;
 	--drx-color-comment: #565f89 !important;
 	--drx-color-accent: #7aa2f7 !important;
+	--drx-color-focus: #bb9af7 !important;
 }
 [data-theme="tokyonight-light"] {
 	--drx-color-base: #f5f6f9 !important;
@@ -138,6 +149,7 @@
 	--drx-color-deactivate: #8c90a3 !important;
 	--drx-color-comment: #989ca0 !important;
 	--drx-color-accent: #3891d1 !important;
+	--drx-color-focus: #89ddff !important;
 }
 
 [data-theme="onedark"] {
@@ -150,6 +162,7 @@
 	--drx-color-deactivate: #5c6370 !important;
 	--drx-color-comment: #5c6370 !important;
 	--drx-color-accent: #61afef !important;
+	--drx-color-focus: #c678dd !important;
 }
 
 [data-theme="onelight"] {
@@ -162,6 +175,7 @@
 	--drx-color-deactivate: #a0a1a7 !important;
 	--drx-color-comment: #a0a1a7 !important;
 	--drx-color-accent: #4078f2 !important;
+	--drx-color-focus: #a626a4 !important;
 }
 
 [data-theme="rosepine-dark"] {
@@ -174,6 +188,7 @@
 	--drx-color-deactivate: #6e6a86 !important;
 	--drx-color-comment: #908caa !important;
 	--drx-color-accent: #ebbcba !important;
+	--drx-color-focus: #c4a7e7 !important;
 }
 [data-theme="rosepine-light"] {
 	--drx-color-base: #faf4ed !important;
@@ -185,6 +200,7 @@
 	--drx-color-deactivate: #9893a5 !important;
 	--drx-color-comment: #797593 !important;
 	--drx-color-accent: #b4637a !important;
+	--drx-color-focus: #907aa9 !important;
 }
 
 [data-theme="ayu-dark"] {
@@ -197,6 +213,7 @@
 	--drx-color-deactivate: #5c6773 !important;
 	--drx-color-comment: #5c6773 !important;
 	--drx-color-accent: #ffb454 !important;
+	--drx-color-focus: #36a3d9 !important;
 }
 
 [data-theme="ayu-light"] {
@@ -209,4 +226,5 @@
 	--drx-color-deactivate: #959da5 !important;
 	--drx-color-comment: #6a737d !important;
 	--drx-color-accent: #f08a24 !important;
+	--drx-color-focus: #36a3d9 !important;
 }
