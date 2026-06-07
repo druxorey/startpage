@@ -1,6 +1,6 @@
 import { initThemes } from './themes';
 import { initSettings } from './settings';
-import { loadShortcuts, updateSearchSuggestions, handleSearchKeyDown, handleSearch, clearSearchInput } from './search';
+import { initSearchEngine, loadShortcuts, updateSearchSuggestions, handleSearchKeyDown, handleSearch, clearSearchInput } from './search';
 
 function updateClockDisplay(): void {
 	const dateTimeDisplay = document.getElementById('datetime-display');
@@ -48,6 +48,7 @@ function initHelpModal(): void {
 document.addEventListener('DOMContentLoaded', async () => {
 	initThemes();
 	initSettings();
+	initSearchEngine();
 	initHelpModal();
 	await loadShortcuts();
 

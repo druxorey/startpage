@@ -20,6 +20,42 @@ export function getSavedSearchEngine(): string {
 	return localStorage.getItem('selectedSearchEngine') || 'https://google.com/search?q=';
 }
 
+export function initSearchEngine(): void {
+	const selectElement = document.getElementById('search-engine-select') as HTMLSelectElement | null;
+	const inputElement = document.getElementById('search-input') as HTMLInputElement | null;
+
+	if (!inputElement) return;
+
+	const updatePlaceholder = (engineUrl: string) => {
+		let engineName = 'Google';
+		if (engineUrl.includes('duckduckgo.com')) {
+			engineName = 'DuckDuckGo';
+		} else if (engineUrl.includes('search.brave.com')) {
+			engineName = 'Brave Search';
+		}
+		inputElement.placeholder = `Search with ${engineName}`;
+	};
+
+	const savedEngine = getSavedSearchEngine();
+	if (selectElement) {
+		selectElement.value = savedEngine;
+	}
+	updatePlaceholder(savedEngine);
+
+	if (selectElement) {
+		selectElement.addEventListener('change', () => {
+			localStorage.setItem('selectedSearchEngine', selectElement.value);
+			updatePlaceholder(selectElement.value);
+		});
+	}
+}
+
+export function clearSearchInput(inputElement: HTMLInputElement): void {
+	inputElement.value = '';
+	inputElement.focus();
+	updateSearchSuggestions('');
+}
+
 export async function loadShortcuts(): Promise<void> {
 	const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/local/share/brave/bookmarks.yaml';
 	try {
