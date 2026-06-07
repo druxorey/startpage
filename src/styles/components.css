@@ -315,8 +315,39 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 1rem;
+	padding: 0 1.5rem;
 	box-shadow: var(--drx-shadow-card);
+	transition: var(--drx-motion-smooth);
+}
+
+.homelab-services-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+.homelab-service-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--drx-color-deactivate);
+	transition: var(--drx-motion-smooth);
+}
+
+.homelab-service-link.online {
+	color: var(--drx-color-accent);
+}
+
+.homelab-service-link.online:hover {
+	color: color-mix(in srgb, var(--drx-color-accent), var(--drx-color-text) 50%);
+	transform: scale(1.15);
+}
+
+.homelab-service-link.offline {
+	cursor: not-allowed;
+	color: color-mix(in srgb, var(--drx-color-deactivate) 35%, transparent);
 }
 
 .preview-text {

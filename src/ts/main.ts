@@ -1,6 +1,7 @@
 import { initThemes } from './themes';
 import { initSettings } from './settings';
 import { initSearchEngine, loadShortcuts, updateSearchSuggestions, handleSearchKeyDown, handleSearch, clearSearchInput } from './search';
+import { checkLocalServices } from './services';
 
 function updateClockDisplay(): void {
 	const dateTimeDisplay = document.getElementById('datetime-display');
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	initHelpModal();
 	await loadShortcuts();
 
+	checkLocalServices();
 	updateClockDisplay();
 	setInterval(updateClockDisplay, 1000);
 
