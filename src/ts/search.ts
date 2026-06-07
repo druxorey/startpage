@@ -189,8 +189,12 @@ export function handleSearch(query: string): void {
 	window.location.href = `${getSavedSearchEngine()}${encodeURIComponent(trimmedQuery)}`;
 }
 
-export function clearSearchInput(inputElement: HTMLInputElement): void {
-	inputElement.value = '';
-	inputElement.focus();
-	updateSearchSuggestions('');
-}
+document.addEventListener('click', (event: MouseEvent) => {
+	const searchWrapper = document.querySelector('.search-wrapper');
+	const suggestionsElement = document.getElementById('search-suggestions');
+	
+	if (searchWrapper && suggestionsElement && !searchWrapper.contains(event.target as Node)) {
+		suggestionsElement.style.display = 'none';
+		activeSuggestionIndex = -1;
+	}
+});
