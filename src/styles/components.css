@@ -1,15 +1,15 @@
+/* ==========================================================================
+   1. DASHBOARD CORE CONTAINER CARD
+   ========================================================================== */
 .content-card {
 	background-color: var(--drx-color-surface);
-	border-radius: var(--drx-radius-lg);
+	border-radius: var(--drx-radius-card);
 	padding: 5rem;
 	gap: 2rem;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0 10px 30px var(--drx-color-shadow);
-	
-	border: var(--drx-border-width) solid transparent;
-	border-top: 1px solid transparent;
-	transition: var(--drx-transition-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: var(--drx-shadow-card);
+	transition: var(--drx-motion-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-header {
@@ -28,33 +28,57 @@
 	color: var(--drx-color-accent);
 }
 
+/* ==========================================================================
+   2. INTERACTIVE SEARCH BAR SYSTEM
+   ========================================================================== */
 .search-wrapper {
 	position: relative;
 }
 
-.search-container {
+.search-input-container {
 	position: relative;
 	width: 100%;
 }
 
+.search-field-icon {
+	position: absolute;
+	left: 1.25rem;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--drx-color-deactivate);
+	pointer-events: none;
+	transition: var(--drx-motion-smooth);
+	z-index: 2;
+}
+
 .search-field {
 	width: 100%;
-	height: var(--drx-bar-height);
-	padding: 0 1.25rem;
+	height: var(--drx-size-bar-height);
+	padding: 0 1.25rem 0 3.25rem;
 	background-color: var(--drx-color-overlay);
-	border: var(--drx-border-width) solid transparent;
-	border-radius: var(--drx-radius-md);
+	border: 0 solid transparent;
+	border-radius: var(--drx-radius-pill);
 	color: var(--drx-color-text);
 	font-family: var(--drx-font-main);
 	font-size: 1.15rem;
 	text-align: left;
-	transition: var(--drx-transition-smooth);
+	transition: var(--drx-motion-smooth);
+	box-shadow: var(--drx-shadow-input);
 }
 
 .search-field:focus {
 	outline: none;
 	border-color: var(--drx-color-overlay);
 	background-color: var(--drx-color-base);
+	box-shadow: var(--drx-shadow-input-focus);
+}
+
+.search-field:focus + .search-field-icon {
+	color: var(--drx-color-accent);
+}
+
+.search-field:focus::placeholder {
+	color: var(--drx-color-highlight);
 }
 
 .search-field::placeholder {
@@ -67,7 +91,7 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
-	padding: 0 1.25rem;
+	padding: 0 1.25rem 0 3.25rem;
 	display: flex;
 	align-items: center;
 	font-family: var(--drx-font-main);
@@ -75,6 +99,7 @@
 	color: transparent;
 	pointer-events: none;
 	white-space: pre;
+	z-index: 1;
 }
 
 .search-ghost span {
@@ -88,12 +113,28 @@
 	left: 0;
 	width: 100%;
 	background-color: var(--drx-color-overlay);
-	border-radius: var(--drx-radius-md);
-	box-shadow: 0 12px 40px var(--drx-color-shadow);
+	border-radius: var(--drx-radius-element);
+	box-shadow: var(--drx-shadow-dropdown);
 	z-index: 1000;
 	display: none;
 	overflow: hidden;
-	margin-top: 4px;
+	margin-top: 1rem;
+	transform-origin: top center;
+}
+
+.suggestions-overlay[style*="display: block"] {
+	animation: dropdownReveal 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes dropdownReveal {
+	from {
+		opacity: 0;
+		transform: scaleY(0.95) translateY(-5px);
+	}
+	to {
+		opacity: 1;
+		transform: scaleY(1) translateY(0);
+	}
 }
 
 .suggestion-item {
@@ -114,7 +155,7 @@
 .suggestion-item.active {
 	background-color: var(--drx-color-accent);
 	color: var(--drx-color-base);
-	border-radius: var(--drx-radius-md);
+	border-radius: var(--drx-radius-element);
 	box-shadow: 0 0 4px color-mix(in srgb, var(--drx-color-accent) 80%, transparent),
 				0 0 12px color-mix(in srgb, var(--drx-color-accent) 30%, transparent);
 }
@@ -128,11 +169,15 @@
 	white-space: nowrap;
 }
 
+/* ==========================================================================
+   3. BOOKMARKS SECTIONS & LISTS GRID
+   ========================================================================== */
 .bookmark-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 2.5rem 2rem;
-	padding: 0 2rem;
+	gap: 2.5rem 4rem;
+	padding: 0rem 1rem 0rem 3rem;
+	transition: var(--drx-motion-smooth), padding 0.4s ease, gap 0.4s ease;
 }
 
 .bookmark-category {
@@ -157,7 +202,7 @@
 }
 
 .bookmark-list {
-	padding-left: 1.25rem;
+	padding-left: 1rem;
 }
 
 .bookmark-list li {
@@ -175,6 +220,9 @@
 	padding-left: 4px;
 }
 
+/* ==========================================================================
+   4. SIDEBAR PANEL Components (RIGHT SIDE)
+   ========================================================================== */
 .sidebar-panel {
 	display: flex;
 	flex-direction: column;
@@ -187,10 +235,18 @@
 	position: relative;
 	width: 100%;
 	flex-grow: 1;
-	border-radius: var(--drx-radius-lg);
+	border-radius: var(--drx-radius-card);
 	overflow: hidden;
-	box-shadow: 0 10px 30px var(--drx-color-shadow);
+	box-shadow: var(--drx-shadow-card);
 	cursor: pointer;
+	transition: var(--drx-motion-smooth);
+}
+
+.image-frame:hover {
+	transform: scale(1.03);
+	box-shadow: inset 0 3px 4px -2px var(--drx-color-highlight),
+	            0 0 25px color-mix(in srgb, var(--drx-color-accent) 60%, transparent),
+	            0 10px 30px color-mix(in srgb, #000000 40%, transparent);
 }
 
 .display-image {
@@ -198,11 +254,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.image-frame:hover .display-image {
-	transform: scale(1.06);
 }
 
 .image-overlay {
@@ -232,25 +283,26 @@
 
 .homelab-preview-box {
 	background-color: var(--drx-color-surface);
-	border-radius: var(--drx-radius-md);
-	height: var(--drx-bar-height);
+	border-radius: var(--drx-radius-pill);
+	height: var(--drx-size-bar-height);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0 1rem;
-	border: var(--drx-border-width) dashed var(--drx-color-highlight);
-	box-shadow: 0 4px 15px var(--drx-color-shadow);
+	box-shadow: var(--drx-shadow-card);
 }
 
 .preview-text {
 	color: var(--drx-color-deactivate);
-	font-size: 0.8rem;
 	text-align: center;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
+/* ==========================================================================
+   5. FLOATING CONTROLS & UTILITY CONFIGURATION BUTTONS
+   ========================================================================== */
 .settings-btn {
 	position: fixed;
 	top: 1.5rem;
@@ -259,7 +311,7 @@
 	border: none;
 	color: var(--drx-color-deactivate);
 	cursor: pointer;
-	transition: var(--drx-transition-smooth);
+	transition: var(--drx-motion-smooth);
 	z-index: 10;
 }
 
@@ -268,14 +320,34 @@
 	transform: rotate(45deg);
 }
 
+.help-btn {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	background: none;
+	border: none;
+	color: var(--drx-color-deactivate);
+	cursor: pointer;
+	transition: var(--drx-motion-smooth);
+	z-index: 10;
+}
+
+.help-btn:hover {
+	color: var(--drx-color-accent);
+	transform: scale(1.1);
+}
+
+/* ==========================================================================
+   6. DIALOG MODALS INTERFACES (PREFERENCES & HELP PANELS)
+   ========================================================================== */
 .config-modal {
 	border: none;
-	border-radius: var(--drx-radius-lg);
+	border-radius: var(--drx-radius-card);
 	background-color: var(--drx-color-surface);
 	color: var(--drx-color-text);
 	margin: auto;
 	padding: 2rem;
-	box-shadow: 0 20px 50px var(--drx-color-shadow);
+	box-shadow: var(--drx-shadow-card);
 	max-width: 500px;
 	width: 90%;
 }
@@ -313,7 +385,7 @@
 }
 
 .close-btn:hover {
-	color: var(--drx-color-accent);
+  color: var(--drx-color-accent);
 }
 
 .modal-divider {
@@ -340,36 +412,32 @@
 }
 
 .form-select {
-	padding: 0.65rem 0.75rem;
+	padding: 0.65rem 3rem 0.65rem 1rem;
 	background-color: var(--drx-color-overlay);
-	border: var(--drx-border-width) solid var(--drx-color-highlight);
-	border-radius: var(--drx-radius-md);
+	border: none;
+	border-radius: var(--drx-radius-element);
 	color: var(--drx-color-text);
 	font-family: var(--drx-font-main);
 	font-size: 0.9rem;
 	outline: none;
 	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23707487' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 1.25rem center;
+	background-size: 14px;
+	transition: var(--drx-motion-smooth);
+}
+
+.form-select:hover {
+	background-color: var(--drx-color-highlight);
 }
 
 .form-select:focus {
-	border-color: var(--drx-color-accent);
-}
-
-.help-btn {
-	position: fixed;
-	bottom: 1.5rem;
-	right: 1.5rem;
-	background: none;
-	border: none;
-	color: var(--drx-color-deactivate);
-	cursor: pointer;
-	transition: var(--drx-transition-smooth);
-	z-index: 10;
-}
-
-.help-btn:hover {
-	color: var(--drx-color-accent);
-	transform: scale(1.1);
+	background-color: var(--drx-color-base);
+	box-shadow: var(--drx-shadow-input-focus);
 }
 
 .help-body {
@@ -404,10 +472,9 @@
 
 .help-key {
 	background-color: var(--drx-color-overlay);
-	border: var(--drx-border-width) solid var(--drx-color-highlight);
 	color: var(--drx-color-accent);
-	padding: 0.2rem 0.5rem;
-	border-radius: var(--drx-radius-md);
+	padding: 0.5rem 0.5rem;
+	border-radius: var(--drx-radius-element);
 	font-size: 0.8rem;
 	font-family: var(--drx-font-main);
 	margin-right: 0.75rem;
@@ -416,6 +483,9 @@
 	display: inline-block;
 }
 
+/* ==========================================================================
+   7. MODAL OVERLAY APPARITION ANIMATIONS
+   ========================================================================== */
 dialog.config-modal[open] {
 	animation: modalReveal 0.4s cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
 }
@@ -439,11 +509,11 @@ dialog.config-modal[open]::backdrop {
 	from {
 		opacity: 0;
 		backdrop-filter: blur(0px);
-		background: var(--drx-color-shadow);
+		background-color: color-mix(in srgb, var(--drx-color-base) 40%, transparent);
 	}
 	to {
 		opacity: 1;
 		backdrop-filter: blur(4px);
-		background: var(--drx-color-shadow);
+		background-color: color-mix(in srgb, var(--drx-color-base) 40%, transparent);
 	}
 }
