@@ -70,7 +70,7 @@ export function clearSearchInput(inputElement: HTMLInputElement): void {
 }
 
 export async function loadShortcuts(): Promise<void> {
-	const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/local/share/brave/bookmarks.yaml';
+	const yamlUrl = 'https://raw.githubusercontent.com/druxorey/dotfiles/refs/heads/main/core/local/share/brave/bookmarks.yaml';
 	try {
 		const response = await fetch(yamlUrl);
 		if (!response.ok) throw new Error('Failed to retrieve remote shortcuts yaml file');
