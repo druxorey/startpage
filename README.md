@@ -11,7 +11,7 @@ _A startpage designed for quick access to your favorite websites_
 
 </div>
 
-![Startpage Screenshot](/resources/startpage-2024-10-08.gif)
+![Startpage Screenshot](resources/startpage-2026-09-04.gif)
 
 This is my personalized startpage, designed to be my browser homepage. It includes quick links to my favorite websites, a search bar, and a minimalist layout.
 
