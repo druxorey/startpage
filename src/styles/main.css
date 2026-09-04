@@ -22,23 +22,22 @@
 
 	--drx-font-main: 'Hack', monospace;
 	--drx-motion-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	--drx-transition-fast: 0.15s ease;
+	--drx-transition-normal: 0.25s ease;
 
 	--drx-size-bar-height: 52px;
-	--drx-size-border-width: 2px;
+	--drx-size-border-width: 1px;
 	--drx-radius-pill: 32px;
 	--drx-radius-card: 16px;
 	--drx-radius-element: 8px;
 
-	--drx-shadow-card: inset 0 3px 4px -2px var(--drx-color-highlight),
-					   0 4px 14px color-mix(in srgb, #000000 20%, transparent),
-					   0 10px 30px color-mix(in srgb, #000000 40%, transparent);
-	--drx-shadow-input: inset 0 2px 2px -1px var(--drx-color-deactivate),
-					    0 2px 4px color-mix(in srgb, var(--drx-color-base) 20%, transparent),
-						0 4px 6px color-mix(in srgb, var(--drx-color-base) 40%, transparent);
-	--drx-shadow-input-focus: inset 0 -2px 2px var(--drx-color-highlight),
-							  inset 0 2px 2px -1px color-mix(in srgb, #000000 20%, transparent);
-	--drx-shadow-dropdown: 0 4px 14px color-mix(in srgb, var(--drx-color-base) 70%, transparent),
-						   0 10px 30px color-mix(in srgb, var(--drx-color-base) 90%, transparent);
+	--drx-border-subtle: 1px solid var(--drx-color-overlay);
+	--drx-border-highlight: 1px solid var(--drx-color-highlight);
+
+	--drx-shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4);
+	--drx-shadow-card-hover: 0 8px 24px color-mix(in srgb, var(--drx-color-accent) 15%, transparent), 0 12px 28px rgba(0, 0, 0, 0.45);
+	--drx-shadow-dropdown: 0 8px 24px color-mix(in srgb, var(--drx-color-surface) 15%, transparent), 0 12px 28px rgba(0, 0, 0, 0.25);
+	--drx-shadow-modal: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
 *, *::before, *::after {
